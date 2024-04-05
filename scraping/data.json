@@ -1,0 +1,1002 @@
+[
+    {
+        "ID": "187777",
+        "offer_price": "608.0",
+        "offer_size": "61.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "500.0",
+        "pref_min_size": "30.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/187777/medium/0e417bc5159a1d1ffad64bf78f56c0f9d89f704d.jpg"
+    },
+    {
+        "ID": "152485",
+        "offer_price": "802.0",
+        "offer_size": "67.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/152485/medium/63d66964f3228c7e7c0f89aed9ac042df3368149.jpg"
+    },
+    {
+        "ID": "199967",
+        "offer_price": "1180.0",
+        "offer_size": "109.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "700.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/199967/medium/9a72bc138832408923ec286be67f5754f47f80c6.jpg"
+    },
+    {
+        "ID": "202858",
+        "offer_price": "800.0",
+        "offer_size": "74.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/202858/medium/f757492f5b04968b8425ee2bbec0c4b6b65d8132.jpg"
+    },
+    {
+        "ID": "193248",
+        "offer_price": "670.0",
+        "offer_size": "75.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1300.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/193248/medium/48de0d6ed893561bbbed16350de714047b5263e7.jpg"
+    },
+    {
+        "ID": "196730",
+        "offer_price": "750.0",
+        "offer_size": "60.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/196730/medium/16b1ea8f47d002c8ce26df1a8e5fedf635020f9d.jpg"
+    },
+    {
+        "ID": "170842",
+        "offer_price": "960.0",
+        "offer_size": "75.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "52.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/170842/medium/6d5a2037c4a57c7bdccaad0afe25a94ef531da5a.jpg"
+    },
+    {
+        "ID": "184443",
+        "offer_price": "980.0",
+        "offer_size": "110.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "750.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/184443/medium/b14dc045393a1b818b26534e533e72f518257d7d.jpg"
+    },
+    {
+        "ID": "164299",
+        "offer_price": "450.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/164299/medium/f3066824cfd9fb67d654cb77bd9bd373fb8a7289.jpg"
+    },
+    {
+        "ID": "191788",
+        "offer_price": "514.0",
+        "offer_size": "65.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "85.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/191788/medium/29aefbbcb23e662ad745fdc494002bed757963f3.jpg"
+    },
+    {
+        "ID": "169497",
+        "offer_price": "1450.0",
+        "offer_size": "105.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/169497/medium/918ea55d270a8305062469801d7937a8237cdf5c.jpg"
+    },
+    {
+        "ID": "163560",
+        "offer_price": "403.0",
+        "offer_size": "48.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/163560/medium/80dc520c09b21a58e5d1523aa03de124c916cdf7.png"
+    },
+    {
+        "ID": "186104",
+        "offer_price": "400.0",
+        "offer_size": "53.0",
+        "offer_rooms": "1.5",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "3.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/186104/medium/5bfc24e585014001ec2e95485dbbe68b17714400.jpg"
+    },
+    {
+        "ID": "191461",
+        "offer_price": "670.0",
+        "offer_size": "77.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "650.0",
+        "pref_min_size": "35.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/191461/medium/0996111b1103cf328563fcb660544eb2e1d23c27.jpg"
+    },
+    {
+        "ID": "190536",
+        "offer_price": "740.0",
+        "offer_size": "71.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2000.0",
+        "pref_min_size": "100.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/190536/medium/803bb3916a2e2b3393d3a11cffff5f63eecbecfa.jpg"
+    },
+    {
+        "ID": "139611",
+        "offer_price": "930.0",
+        "offer_size": "75.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "2000.0",
+        "pref_min_size": "120.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/139611/medium/c34371bb66c33294f6885d4920e277f88abc22bc.jpg"
+    },
+    {
+        "ID": "188954",
+        "offer_price": "977.0",
+        "offer_size": "140.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/188954/medium/a14d14fce7ae13826abacd5fddbb013ba20e0a57.jpg"
+    },
+    {
+        "ID": "183795",
+        "offer_price": "500.0",
+        "offer_size": "80.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "550.0",
+        "pref_min_size": "65.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/183795/medium/05349230be96f4fee5fc8a8adc796880e2d4146a.jpg"
+    },
+    {
+        "ID": "134006",
+        "offer_price": "413.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "95.0",
+        "pref_min_rooms": "3.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/134006/medium/617992bb566213ecefc7428aac52ff5570a827b6.jpg"
+    },
+    {
+        "ID": "178759",
+        "offer_price": "360.0",
+        "offer_size": "36.0",
+        "offer_rooms": "1.0",
+        "pref_max_price": "1200.0",
+        "pref_min_size": "58.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/178759/medium/00a56eeffe4218fa9e86eca128606082ae39c36d.jpg"
+    },
+    {
+        "ID": "182836",
+        "offer_price": "2080.0",
+        "offer_size": "126.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/182836/medium/22f510be2dd93e35a914451e7658e4a46de488df.jpg"
+    },
+    {
+        "ID": "172614",
+        "offer_price": "300.0",
+        "offer_size": "35.0",
+        "offer_rooms": "1.0",
+        "pref_max_price": "900.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/172614/medium/e31a7e53e0d33deb82bcb49db015f0c458413566.jpg"
+    },
+    {
+        "ID": "170238",
+        "offer_price": "412.0",
+        "offer_size": "56.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "700.0",
+        "pref_min_size": "1.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/170238/medium/11f0d33d23d5a9bd352a0b4013ae9f7fa03794c3.jpg"
+    },
+    {
+        "ID": "174445",
+        "offer_price": "720.0",
+        "offer_size": "60.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "75.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/174445/medium/a9432ac9abe314e3dae41ade354f8c9b199d7803.jpg"
+    },
+    {
+        "ID": "52050",
+        "offer_price": "1077.0",
+        "offer_size": "78.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "95.0",
+        "pref_min_rooms": "3.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/52050/medium/a715597a5ab619b66fd011bab0519b47bfdcda7f.jpg"
+    },
+    {
+        "ID": "150599",
+        "offer_price": "726.0",
+        "offer_size": "83.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1350.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/150599/medium/fa476d0f85725d8e078d395e0fb5280b17aa4a98.jpg"
+    },
+    {
+        "ID": "173396",
+        "offer_price": "324.0",
+        "offer_size": "50.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "750.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/173396/medium/abadc7cd247dbd390bd439c804556e3d597646d4.jpg"
+    },
+    {
+        "ID": "158609",
+        "offer_price": "300.0",
+        "offer_size": "32.0",
+        "offer_rooms": "1.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "45.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/158609/medium/d8f62c3d180b3cb1d7919bed49a8c188f1f1e5e3.jpg"
+    },
+    {
+        "ID": "183531",
+        "offer_price": "600.0",
+        "offer_size": "73.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/183531/medium/aa55ebc8809a0db6e329b2f7ab3425f1ff84ffc7.jpg"
+    },
+    {
+        "ID": "183156",
+        "offer_price": "1200.0",
+        "offer_size": "73.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1350.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/183156/medium/9b70ef04fc7e5d9cc2504558a088ad72e61fab12.jpg"
+    },
+    {
+        "ID": "183356",
+        "offer_price": "683.0",
+        "offer_size": "71.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "650.0",
+        "pref_min_size": "45.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/183356/medium/d4e3d252b0b8f5e3de25c9decd34b745e76a22a7.jpg"
+    },
+    {
+        "ID": "180246",
+        "offer_price": "636.0",
+        "offer_size": "63.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "95.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/180246/medium/650f63ca95bada21a81f65489bd4f7b348994ee1.jpg"
+    },
+    {
+        "ID": "164339",
+        "offer_price": "950.0",
+        "offer_size": "69.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/164339/medium/dd92d46c2667144362cb73e50df839d85bf6cae6.jpg"
+    },
+    {
+        "ID": "139271",
+        "offer_price": "1540.0",
+        "offer_size": "103.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "800.0",
+        "pref_min_size": "45.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/139271/medium/9d251f1c576f7c27df82e2c7d2e1587a2e0e6f01.jpg"
+    },
+    {
+        "ID": "198757",
+        "offer_price": "900.0",
+        "offer_size": "85.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2700.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/198757/medium/1676f3e7f7537da57061ceaec232c6036006da1b.jpg"
+    },
+    {
+        "ID": "149482",
+        "offer_price": "945.0",
+        "offer_size": "109.0",
+        "offer_rooms": "3.5",
+        "pref_max_price": "550.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/149482/medium/4a1ec35f4d01c0277ba65310848c6c1dfdd8b303.jpg"
+    },
+    {
+        "ID": "32979",
+        "offer_price": "781.0",
+        "offer_size": "57.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1950.0",
+        "pref_min_size": "75.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/32979/medium/9c8d9f91dd723b69e995241f01c484f967ed35e0.jpg"
+    },
+    {
+        "ID": "23728",
+        "offer_price": "700.0",
+        "offer_size": "58.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/23728/medium/867c7cc65eafc50e650e65a1742aeb5911428bb8.jpeg"
+    },
+    {
+        "ID": "174262",
+        "offer_price": "760.0",
+        "offer_size": "58.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "79.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/174262/medium/8b9a6bbc86d9802253eeec3a9596b09403e66eb9.png"
+    },
+    {
+        "ID": "197884",
+        "offer_price": "746.0",
+        "offer_size": "59.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/197884/medium/6f0bfdb5c04b8e202d71e4e522fe97e0cb50fd14.jpg"
+    },
+    {
+        "ID": "147327",
+        "offer_price": "358.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1100.0",
+        "pref_min_size": "65.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/147327/medium/f9ff783eccc6e540b975df2b93b205a8d6826403.jpg"
+    },
+    {
+        "ID": "76310",
+        "offer_price": "736.0",
+        "offer_size": "61.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "700.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/76310/medium/af70ac0c2f1035141b058e9352b251d318167653.jpg"
+    },
+    {
+        "ID": "176560",
+        "offer_price": "3000.0",
+        "offer_size": "240.0",
+        "offer_rooms": "6.0",
+        "pref_max_price": "3000.0",
+        "pref_min_size": "200.0",
+        "pref_min_rooms": "5.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/176560/medium/9ee7e7e4b082318cf207ef1666a81ef07766c5e6.jpg"
+    },
+    {
+        "ID": "201072",
+        "offer_price": "1300.0",
+        "offer_size": "80.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2000.0",
+        "pref_min_size": "100.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/201072/medium/5ebcb2a636c61ff3b35d1a19f93d7ac9a5cba070.jpg"
+    },
+    {
+        "ID": "137347",
+        "offer_price": "1800.0",
+        "offer_size": "95.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "3000.0",
+        "pref_min_size": "120.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/137347/medium/67ccf41e768d75b3393e8ccbb75d5f7bacc9c165.jpg"
+    },
+    {
+        "ID": "138705",
+        "offer_price": "1072.0",
+        "offer_size": "107.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "600.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/138705/medium/ee4ca970665bcae6664fdf79dfe8bfc97eba7875.jpg"
+    },
+    {
+        "ID": "131154",
+        "offer_price": "1800.0",
+        "offer_size": "101.0",
+        "offer_rooms": "3.5",
+        "pref_max_price": "3700.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/131154/medium/c9e9edcbfab6b7c7a6aa1f5643dcb4a4261f93e8.jpg"
+    },
+    {
+        "ID": "191360",
+        "offer_price": "450.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/191360/medium/c40b0880f34da17f220c1ae6d61846167eeee6a5.jpg"
+    },
+    {
+        "ID": "177112",
+        "offer_price": "593.0",
+        "offer_size": "81.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2200.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/177112/medium/817e964a1c89c799250941d3123db09e5ae96c30.jpg"
+    },
+    {
+        "ID": "179697",
+        "offer_price": "900.0",
+        "offer_size": "74.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "10000.0",
+        "pref_min_size": "100.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/179697/medium/3c263aad80da38a5c84bf2224679fce3de98bfab.jpg"
+    },
+    {
+        "ID": "21522",
+        "offer_price": "433.0",
+        "offer_size": "68.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/21522/medium/fdd142b9a1efd666c990356365e3eb5438498284.png"
+    },
+    {
+        "ID": "154618",
+        "offer_price": "410.0",
+        "offer_size": "47.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "75.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/154618/medium/4f402000410027ae17fb98431def5f2a859a5c87.jpg"
+    },
+    {
+        "ID": "136848",
+        "offer_price": "524.0",
+        "offer_size": "50.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/136848/medium/c9458b2986114e3090e3021fe33ffb91de52c042.jpg"
+    },
+    {
+        "ID": "183404",
+        "offer_price": "600.0",
+        "offer_size": "60.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1200.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/183404/medium/1e4eca2891f9039b5e1804e90f961bc61a3727a8.jpg"
+    },
+    {
+        "ID": "141886",
+        "offer_price": "1190.0",
+        "offer_size": "103.0",
+        "offer_rooms": "3.5",
+        "pref_max_price": "1900.0",
+        "pref_min_size": "120.0",
+        "pref_min_rooms": "4.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/141886/medium/5c48e9ea6ed081aa750dc624722fe19554a19e8b.jpg"
+    },
+    {
+        "ID": "179020",
+        "offer_price": "1242.0",
+        "offer_size": "74.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1800.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/179020/medium/b90d03dc93deff66118dc2cf9a8cd0124258119f.jpg"
+    },
+    {
+        "ID": "136058",
+        "offer_price": "1200.0",
+        "offer_size": "115.0",
+        "offer_rooms": "4.5",
+        "pref_max_price": "700.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/136058/medium/304a4a718b0f4834992b2eafb6672dc8ede5f01e.jpg"
+    },
+    {
+        "ID": "42772",
+        "offer_price": "503.0",
+        "offer_size": "58.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "950.0",
+        "pref_min_size": "75.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/42772/medium/b32cfa1309c23e7a97f84d18452f17c8f1c90d18.jpg"
+    },
+    {
+        "ID": "136900",
+        "offer_price": "1000.0",
+        "offer_size": "86.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1200.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/136900/medium/3ebf76b982846a39afb56a53c2914e39dbe3a597.jpg"
+    },
+    {
+        "ID": "108612",
+        "offer_price": "522.0",
+        "offer_size": "79.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "700.0",
+        "pref_min_size": "45.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/108612/medium/e86e488bce6c2f0564cee7f03c5a9e67c616756d.jpg"
+    },
+    {
+        "ID": "125092",
+        "offer_price": "1850.0",
+        "offer_size": "109.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "2300.0",
+        "pref_min_size": "130.0",
+        "pref_min_rooms": "5.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/125092/medium/97850ee1715c0624f93c3e95ee317e63ce5b8166.jpg"
+    },
+    {
+        "ID": "173766",
+        "offer_price": "472.0",
+        "offer_size": "97.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1200.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/173766/medium/7dca4af032d1f21a2998eafc2c9a044548a8598f.jpg"
+    },
+    {
+        "ID": "17559",
+        "offer_price": "620.0",
+        "offer_size": "83.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1000.0",
+        "pref_min_size": "85.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/17559/medium/3925fea7ca0af0d49ff3532210a75259e388cde7.jpeg"
+    },
+    {
+        "ID": "196660",
+        "offer_price": "545.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "800.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/196660/medium/77ab39dac0955159f3a3e042f18e92644f4ffe21.jpg"
+    },
+    {
+        "ID": "81707",
+        "offer_price": "1200.0",
+        "offer_size": "70.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/81707/medium/bb2372e7f4e993588c38af28cea2b8e6b36205bf.png"
+    },
+    {
+        "ID": "148429",
+        "offer_price": "600.0",
+        "offer_size": "45.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1250.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/148429/medium/6b3ca52af06b3f4c3238caf04abe4b0154e91ab3.jpg"
+    },
+    {
+        "ID": "152535",
+        "offer_price": "1335.0",
+        "offer_size": "92.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "1700.0",
+        "pref_min_size": "85.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/152535/medium/0f3f15c710161491629f633de20815cb7db72284.jpg"
+    },
+    {
+        "ID": "173546",
+        "offer_price": "380.0",
+        "offer_size": "61.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1100.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/173546/medium/85db3092f21ae69ff19b8dca748c8bbefaf35187.jpg"
+    },
+    {
+        "ID": "82296",
+        "offer_price": "900.0",
+        "offer_size": "102.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "3500.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/82296/medium/818627e9384496b62fe49de994c255cc0b75a6b2.jpg"
+    },
+    {
+        "ID": "78661",
+        "offer_price": "700.0",
+        "offer_size": "58.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "900.0",
+        "pref_min_size": "58.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/78661/medium/39b6afce4a80dda057751a24d79ac1ea729cc03a.jpg"
+    },
+    {
+        "ID": "18801",
+        "offer_price": "452.0",
+        "offer_size": "65.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1800.0",
+        "pref_min_size": "100.0",
+        "pref_min_rooms": "3.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/18801/medium/f59c1b46104c329355af5185780df95ec26c05c1.jpg"
+    },
+    {
+        "ID": "36766",
+        "offer_price": "1100.0",
+        "offer_size": "88.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "95.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/36766/medium/fb8c343b70b4b9369345d56cf697949833668d03.jpg"
+    },
+    {
+        "ID": "176906",
+        "offer_price": "595.0",
+        "offer_size": "55.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "900.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/176906/medium/d0bdfd9979e40f4534283d323650f7e326253716.jpg"
+    },
+    {
+        "ID": "46032",
+        "offer_price": "840.0",
+        "offer_size": "110.0",
+        "offer_rooms": "4.5",
+        "pref_max_price": "600.0",
+        "pref_min_size": "65.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/46032/medium/f287b11d676e15efcda44198d404f817ba880893.jpg"
+    },
+    {
+        "ID": "133937",
+        "offer_price": "850.0",
+        "offer_size": "110.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "800.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/133937/medium/be34d5091f14ef72f41fac0fa48c646892de06df.jpg"
+    },
+    {
+        "ID": "103022",
+        "offer_price": "410.0",
+        "offer_size": "50.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "80.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/103022/medium/0a4da9af1a27976942e0071f49b6e74531e98e6b.png"
+    },
+    {
+        "ID": "124625",
+        "offer_price": "500.0",
+        "offer_size": "45.0",
+        "offer_rooms": "1.0",
+        "pref_max_price": "750.0",
+        "pref_min_size": "35.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/124625/medium/ab4953ebbe4561fe37b91189e309e7ce9e850922.jpg"
+    },
+    {
+        "ID": "161085",
+        "offer_price": "850.0",
+        "offer_size": "76.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1800.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/161085/medium/4d1d90ab959e3038b477a36e877f30113aad35cf.jpg"
+    },
+    {
+        "ID": "199433",
+        "offer_price": "1779.0",
+        "offer_size": "79.0",
+        "offer_rooms": "3.5",
+        "pref_max_price": "1300.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "1.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/199433/medium/3167be92b54011677596ea4b8fc413efdca65ae9.png"
+    },
+    {
+        "ID": "63635",
+        "offer_price": "700.0",
+        "offer_size": "50.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "75.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/63635/medium/19d24e850339ab3ea21c9669b3bdf0e757220ee2.jpg"
+    },
+    {
+        "ID": "61967",
+        "offer_price": "800.0",
+        "offer_size": "100.0",
+        "offer_rooms": "3.5",
+        "pref_max_price": "700.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/61967/medium/dabdbfb76c20db35b641ba6a2d87a3d110e60aea.jpg"
+    },
+    {
+        "ID": "77623",
+        "offer_price": "1150.0",
+        "offer_size": "105.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "3000.0",
+        "pref_min_size": "110.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/77623/medium/44625334e47c906c98b449bff13212a5ee1cb59a.jpg"
+    },
+    {
+        "ID": "176264",
+        "offer_price": "750.0",
+        "offer_size": "80.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "540.0",
+        "pref_min_size": "40.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/176264/medium/e3b7c1e5d533b4de1c999f126cb15cf452fde68d.jpg"
+    },
+    {
+        "ID": "144120",
+        "offer_price": "1.0",
+        "offer_size": "51.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1700.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "2.5",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/144120/medium/0b3c5fc3770ad3df56396a71ae2e9340952e980a.jpg"
+    },
+    {
+        "ID": "23156",
+        "offer_price": "650.0",
+        "offer_size": "70.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "2000.0",
+        "pref_min_size": "100.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/23156/medium/c60f0089df535964ccb245293e252846e32664a1.png"
+    },
+    {
+        "ID": "145084",
+        "offer_price": "1350.0",
+        "offer_size": "100.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "800.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/145084/medium/0f053a42aaeb7ae719da523a027df9ee46c6ce77.jpg"
+    },
+    {
+        "ID": "164754",
+        "offer_price": "472.0",
+        "offer_size": "69.0",
+        "offer_rooms": "2.5",
+        "pref_max_price": "700.0",
+        "pref_min_size": "70.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/164754/medium/a63558b319fc6b269bd8bea114181024ab03092d.jpg"
+    },
+    {
+        "ID": "174158",
+        "offer_price": "950.0",
+        "offer_size": "89.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/174158/medium/dedc3f3c4b8267b9dc5af3d093fe576563c5a366.jpg"
+    },
+    {
+        "ID": "84651",
+        "offer_price": "1590.0",
+        "offer_size": "104.0",
+        "offer_rooms": "4.0",
+        "pref_max_price": "900.0",
+        "pref_min_size": "45.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/84651/medium/1ac7f0905774386417e1cda616545cf040e7cbb5.png"
+    },
+    {
+        "ID": "104391",
+        "offer_price": "1130.0",
+        "offer_size": "102.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1300.0",
+        "pref_min_size": "55.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/104391/medium/5ec5cfd1ab5b486c8501a49f3f50ae12cee11b53.jpg"
+    },
+    {
+        "ID": "156746",
+        "offer_price": "512.0",
+        "offer_size": "56.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "60.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/156746/medium/f0b70fadf7f6bd34aa242a3b1ff76fc060cb117e.jpg"
+    },
+    {
+        "ID": "122808",
+        "offer_price": "565.0",
+        "offer_size": "82.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "600.0",
+        "pref_min_size": "65.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/122808/medium/d324104ca5887034e6405b04814a95b8bbe9ccbd.jpg"
+    },
+    {
+        "ID": "170749",
+        "offer_price": "900.0",
+        "offer_size": "75.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1600.0",
+        "pref_min_size": "85.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/170749/medium/7d7f5bf4f5fbe58e015bf952ca147a2a6a91dc33.jpg"
+    },
+    {
+        "ID": "96141",
+        "offer_price": "726.0",
+        "offer_size": "62.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "700.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/96141/medium/deda0f004a0c444eb336422966dff1b79283cab0.jpg"
+    },
+    {
+        "ID": "173358",
+        "offer_price": "470.0",
+        "offer_size": "57.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1500.0",
+        "pref_min_size": "5.0",
+        "pref_min_rooms": "1.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/173358/medium/97d9a05c9ee81584540b786ee245d9d39fbd3017.jpg"
+    },
+    {
+        "ID": "147440",
+        "offer_price": "1000.0",
+        "offer_size": "86.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "600.0",
+        "pref_min_size": "50.0",
+        "pref_min_rooms": "2.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/147440/medium/eb7f8d52bbde5291763d91d903510f300176b39d.jpg"
+    },
+    {
+        "ID": "65948",
+        "offer_price": "830.0",
+        "offer_size": "71.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1400.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "3.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/65948/medium/5eca371fd09ebe9aec3696ffc2c1ab5db84ee8ec.jpg"
+    },
+    {
+        "ID": "77114",
+        "offer_price": "300.0",
+        "offer_size": "65.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "2500.0",
+        "pref_min_size": "90.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/77114/medium/a2961b27e557ba86515c4aec08533a4ad757286d.png"
+    },
+    {
+        "ID": "137594",
+        "offer_price": "1065.0",
+        "offer_size": "75.0",
+        "offer_rooms": "3.0",
+        "pref_max_price": "1800.0",
+        "pref_min_size": "110.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/137594/medium/196d0b97ba4b79a7d765432a6deb9447d9257fa2.jpg"
+    },
+    {
+        "ID": "201992",
+        "offer_price": "723.0",
+        "offer_size": "50.0",
+        "offer_rooms": "2.0",
+        "pref_max_price": "1200.0",
+        "pref_min_size": "85.0",
+        "pref_min_rooms": "4.0",
+        "img_url": "https://www.tauschwohnung.com/uploads/housings/201992/medium/bdb57d775002b8582268d1e8b521766de47ce6ec.jpg"
+    }
+]
