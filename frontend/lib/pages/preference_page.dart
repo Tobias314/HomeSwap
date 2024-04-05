@@ -1,14 +1,15 @@
+import 'package:dating_app/cubits/currentHomeCubit.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/pages/swipe_page.dart';
 import 'package:flutter/material.dart';
-import 'package:settings_ui/settings_ui.dart';
+import '../models/ApartmentPreferenceState.dart';
+import '../cubits/currentHomeCubit.dart';
+import '../cubits/newHomePreferencesCubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PreferencePage extends StatefulWidget {
-  @override
-  _PreferencePageState createState() => _PreferencePageState();
-}
 
-class _PreferencePageState extends State<PreferencePage> {
+
+class PreferencePage extends StatelessWidget {
   String selectedMinZimmer = '1';
   String selectedMaxZimmer = '10+';
   String selectedMinQuadratmeter = '<10';
@@ -220,149 +221,153 @@ class _PreferencePageState extends State<PreferencePage> {
     'Zwickau'
   ];
 
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('What are you looking for?'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Preferences',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CurrentHomeCubit>(
+          create: (context) => CurrentHomeCubit(),
+        ),
+        BlocProvider<NewHomePreferencesCubit>(
+          create: (context) => NewHomePreferencesCubit(),
+        ),
+      ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('What are you looking for?'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Preferences',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Table(
-              children: [
-                buildDropdownRow(
-                  label: 'Zimmerzahl Minimum',
-                  value: selectedMinZimmer,
-                  items: Zimmeranzahl_Min,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMinZimmer = value ?? selectedMinZimmer;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Zimmerzahl Maximum',
-                  value: selectedMaxZimmer,
-                  items: Zimmeranzahl_Max,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMaxZimmer = value ?? selectedMaxZimmer;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Quadratmeter Minimum',
-                  value: selectedMinQuadratmeter,
-                  items: Quadratmeter_Min,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMinQuadratmeter =
-                          value ?? selectedMinQuadratmeter;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Quadratmeter Maximum',
-                  value: selectedMaxQuadratmeter,
-                  items: Quadratmeter_Max,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMaxQuadratmeter =
-                          value ?? selectedMaxQuadratmeter;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Mietpreis Minimum',
-                  value: selectedMietpreisMin,
-                  items: Mietpreis_Min,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMietpreisMin = value ?? selectedMietpreisMin;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Mietpreis Maximum',
-                  value: selectedMietpreisMax,
-                  items: Mietpreis_Max,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMietpreisMax = value ?? selectedMietpreisMax;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Stadt',
-                  value: selectedStadt,
-                  items: Stadt,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedStadt = value ?? selectedStadt;
-                    });
-                  },
-                ),
-              ],
-            ),
-            ElevatedButton(
-                  child: const Text('Submit Preferences'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SwipePage()),
-                    );
-                  },
-                ),
-          ],
+              SizedBox(height: 20),
+              // Example for one preference, you can extend it similarly
+              buildDropdownRow(
+                label: 'Zimmerzahl Minimum',
+                value: selectedMinZimmer, // Your state variable holding the current value
+                items: Zimmeranzahl_Min, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMinRooms(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Zimmerzahl Maximum',
+                value: selectedMaxZimmer, // Your state variable holding the current value
+                items: Zimmeranzahl_Max, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMaxRooms(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Minimun Quadratmeter',
+                value: selectedMinQuadratmeter, // Your state variable holding the current value
+                items: Quadratmeter_Min, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMinSquareMeters(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Maximun Quadratmeter',
+                value: selectedMaxQuadratmeter, // Your state variable holding the current value
+                items: Quadratmeter_Max, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMaxSquareMeters(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Minimum Miete',
+                value: selectedMietpreisMin, // Your state variable holding the current value
+                items: Mietpreis_Min, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMinRent(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Maximum Miete',
+                value: selectedMietpreisMax, // Your state variable holding the current value
+                items: Mietpreis_Max, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMaxRent(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Stadt',
+                value: selectedStadt, // Your state variable holding the current value
+                items: Stadt, // Your list of options for the dropdown
+                onChanged: (String? value) {
+                   // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateCity(value);
+                },
+              ),
+              // Add more BlocBuilders for other preferences
+              ElevatedButton(
+                child: const Text('Submit Preferences'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  TableRow buildDropdownRow({
+  Widget buildDropdownRow({
     required String label,
     required String value,
     required List<String> items,
     required void Function(String?) onChanged,
   }) {
-    return TableRow(
-      children: [
-        TableCell(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              label,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-        ),
-        TableCell(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: DropdownButtonFormField<String>(
-              value: value,
-              items: items.map((item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(item),
-                );
-              }).toList(),
-              onChanged: onChanged,
+          DropdownButtonFormField<String>(
+            value: value,
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
             ),
+            items: items.map((String item) {
+              return DropdownMenuItem<String>(
+                value: item,
+                child: Text(item),
+              );
+            }).toList(),
+            onChanged: onChanged,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
+
+  
+   
+  
 }
