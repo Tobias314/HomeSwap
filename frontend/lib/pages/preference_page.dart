@@ -320,7 +320,7 @@ class PreferencePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                    MaterialPageRoute(builder: (context) => SwipePage()),
                   );
                 },
               ),
@@ -344,7 +344,7 @@ class PreferencePage extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           DropdownButtonFormField<String>(
             value: value,
