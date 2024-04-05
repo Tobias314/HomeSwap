@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/confetti_page.dart';
 import 'package:flutter/material.dart';
 
 // Define a data class for the image data
@@ -54,6 +55,10 @@ class OfferPage extends StatelessWidget {
               onPressed: () {
                 // Add your logic for "Match akzeptieren" button press here
                 print('Match akzeptieren pressed for ${imageData.name}');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ConfettiPage()),
+                );
               },
               child: Text('Match akzeptieren'),
             ),
