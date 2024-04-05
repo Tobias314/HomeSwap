@@ -15,11 +15,9 @@ class _SwipePageState extends State<SwipePage> {
   List<ProfileCard> profile = [];
 
   List<String> images = [
-    'assets/images/user1.jpg',
-    'assets/images/user7.png',
-    'assets/images/user2.jpg',
-    'assets/images/user3.jpg',
-    'assets/images/user4.jpg',
+    'assets/images/example1.jpg',
+    'assets/images/example2.jpg',
+    'assets/images/example3.jpg',
   ];
 
   @override

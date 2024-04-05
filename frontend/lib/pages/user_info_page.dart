@@ -6,17 +6,9 @@ class UserInfoPage extends StatelessWidget {
   final String image;
 
   List<String> images = [
-    'assets/images/user1.jpg',
-    'assets/images/user7.png',
-    'assets/images/user2.jpg',
-    'assets/images/user3.jpg',
-    'assets/images/user4.jpg',
-    'assets/images/user5.jpeg',
-    'assets/images/user6.png',
-    'assets/images/user7.png',
-    'assets/images/user8.png',
-    'assets/images/user9.png',
-    'assets/images/user10.png',
+    'assets/images/example1.jpg',
+    'assets/images/example2.jpg',
+    'assets/images/example3.jpg',
   ];
 
   @override
@@ -72,7 +64,7 @@ class UserInfoPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text('Malena Veronica, 23', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: ColorConstants.secondary)),
+                        Text('Wohnung in Berlin Neukölln, 55 m²', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: ColorConstants.secondary)),
                         const SizedBox(width: 10),
                         Container(
                           width: 10,
@@ -84,56 +76,15 @@ class UserInfoPage extends StatelessWidget {
                         )
                       ],
                     ),
+                    const SizedBox(height: 26,),
+                    Text('Zimmer: 2', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
                     const SizedBox(height: 8,),
-                    Text('Fashion Designer at Victoria Secret', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
+                    Text('Kaltmiete: 413€', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
                     const SizedBox(height: 8,),
-                    Text('69m away', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 32,),
-                    Text('ABOUT ME', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
+                    Text('Nebenkosten: 175€', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
                     const SizedBox(height: 8,),
-                    Text('Hey guys, This is Malena. I’m here to find someone for hookup. I’m not interested in something serious. I would love to hear your adventurous story.', style: TextStyle(color: ColorConstants.secondary, fontSize: 16, height: 1.5, fontWeight: FontWeight.normal)),
-                    const SizedBox(height: 32,),
-                    Text('INTERESTS', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
+                    Text('Stockwerk: 1', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
                     const SizedBox(height: 8,),
-                    Wrap(
-                      spacing: 10,
-                      children: [
-                        _chip(background: ColorConstants.lightOrange, color: ColorConstants.brightOrange, title: 'Travel'),
-                        _chip(background: ColorConstants.lightBlue, color: ColorConstants.brightBlue, title: 'Dance'),
-                        _chip(background: ColorConstants.lightOrange1, color: ColorConstants.brightOrange1, title: 'Fitness'),
-                        _chip(background: ColorConstants.lightPurple, color: ColorConstants.brightPurple, title: 'Reading'),
-                        _chip(background: ColorConstants.lightPurple1, color: ColorConstants.brightPurple1, title: 'Photography'),
-                        _chip(background: ColorConstants.lightGreen, color: ColorConstants.brightGreen, title: 'Music'),
-                        _chip(background: ColorConstants.lightPink, color: ColorConstants.brightPink, title: 'Movie'),
-                      ],
-                    ),
-                    const SizedBox(height: 24,),
-                    Text('INSTAGRAM PHOTOS', style: TextStyle(color: ColorConstants.secondary, fontSize: 18, fontWeight: FontWeight.w500)),
-                    const SizedBox(height: 8,),
-                    SizedBox(
-                      height: 120,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: images.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: 114,
-                            height: 114,
-                            margin: const EdgeInsets.all(4),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: AssetImage(images[index]),
-                                fit: BoxFit.fitWidth,
-                                alignment: Alignment.topCenter,
-                                // scale: 1.1,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 100,)
                   ],
                 ),
               ),
