@@ -131,7 +131,7 @@ class _SwipePageState extends State<SwipePage> {
               ],
             )
           ),
-          Text(
+          const Text(
               'Rate this profile:',
               style: TextStyle(fontSize: 20),
             ),

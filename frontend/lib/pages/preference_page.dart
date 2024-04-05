@@ -1,6 +1,7 @@
 import 'package:dating_app/cubits/currentHomeCubit.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/pages/swipe_page.dart';
+import 'package:dating_app/pages/test.dart';
 import 'package:flutter/material.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
@@ -224,16 +225,7 @@ class PreferencePage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<CurrentHomeCubit>(
-          create: (context) => CurrentHomeCubit(),
-        ),
-        BlocProvider<NewHomePreferencesCubit>(
-          create: (context) => NewHomePreferencesCubit(),
-        ),
-      ],
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('What are you looking for?'),
         ),
@@ -249,7 +241,7 @@ class PreferencePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Example for one preference, you can extend it similarly
               buildDropdownRow(
                 label: 'Zimmerzahl Minimum',
@@ -257,7 +249,7 @@ class PreferencePage extends StatelessWidget {
                 items: Zimmeranzahl_Min, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMinRooms(value);
+                  context.read<NewHomePreferencesCubit>().updateMinRooms(value);
                 },
               ),
               buildDropdownRow(
@@ -266,7 +258,7 @@ class PreferencePage extends StatelessWidget {
                 items: Zimmeranzahl_Max, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMaxRooms(value);
+                  context.read<NewHomePreferencesCubit>().updateMaxRooms(value);
                 },
               ),
               buildDropdownRow(
@@ -275,7 +267,7 @@ class PreferencePage extends StatelessWidget {
                 items: Quadratmeter_Min, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMinSquareMeters(value);
+                  context.read<NewHomePreferencesCubit>().updateMinSquareMeters(value);
                 },
               ),
               buildDropdownRow(
@@ -284,7 +276,7 @@ class PreferencePage extends StatelessWidget {
                 items: Quadratmeter_Max, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMaxSquareMeters(value);
+                  context.read<NewHomePreferencesCubit>().updateMaxSquareMeters(value);
                 },
               ),
               buildDropdownRow(
@@ -293,7 +285,7 @@ class PreferencePage extends StatelessWidget {
                 items: Mietpreis_Min, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMinRent(value);
+                  context.read<NewHomePreferencesCubit>().updateMinRent(value);
                 },
               ),
               buildDropdownRow(
@@ -302,7 +294,7 @@ class PreferencePage extends StatelessWidget {
                 items: Mietpreis_Max, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateMaxRent(value);
+                  context.read<NewHomePreferencesCubit>().updateMaxRent(value);
                 },
               ),
               buildDropdownRow(
@@ -311,7 +303,7 @@ class PreferencePage extends StatelessWidget {
                 items: Stadt, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
-                  context.read<CurrentHomeCubit>().updateCity(value);
+                  context.read<NewHomePreferencesCubit>().updateCity(value);
                 },
               ),
               // Add more BlocBuilders for other preferences
@@ -327,8 +319,7 @@ class PreferencePage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget buildDropdownRow({
