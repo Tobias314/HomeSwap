@@ -33,4 +33,17 @@ for x in range(Max_Resultes):
                 key = element.find('br').previous_sibling.strip()
                 value = element.find('strong').text.strip().replace("\xa0", "")
                 extracted_item[key] = value
-            print("Extracted item:", extracted_item)
+            #print("Extracted item:", extracted_item)
+
+            item_characteristics = item_soup.find('div', class_='table-responsive')
+            characteristics_table = item_characteristics.find('table', class_='table-characteristics')
+            characteristics_rows = characteristics_table.find_all('tr')
+
+            extracted_characteristics = {}
+            for row in characteristics_rows:
+                cells = row.find_all('td')
+                characteristic_name = cells[0].text.strip()
+                characteristic_value = cells[1].text.strip().replace("                ", "")
+                extracted_characteristics[characteristic_name] = characteristic_value
+            
+            #print("Extracted characteristics:", extracted_characteristics)
