@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'pages/profile_page.dart';
 import 'pages/swipe_page.dart';
+import 'pages/preference_page.dart';
 
 void main() => runApp(const MyApp());
  
@@ -80,7 +81,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 print(passwordController.text);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SwipePage()),
+                  MaterialPageRoute(builder: (context) => const PreferencePage()),
               );
           },
         ),
