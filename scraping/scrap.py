@@ -13,7 +13,7 @@ def extract_int(value):
 
 df = pd.DataFrame()
 
-for x in range(10):
+for x in range(50):
     x = x + 1
     print(f"Scraping site {x} of {Max_Resultes}")
     url = f"https://www.tauschwohnung.com/search/result?city=Berlin&housing_type=1&storey_min=-1&storey_max=100&sort=standard&page={x}"
@@ -87,7 +87,7 @@ for x in range(10):
 
 df.to_csv("t.csv")
 df.to_json("t.json")
-df = df.drop(["Antwortrate", "Antwortzeit", "Letzter Login", "Objektart", "Nebenkosten", "Kaution", "Einzugsdatum", "Stockwerk", "Außenausstattung", "Innenausstattung", "Fußboden", "Heizung", "Merkmale", "Wohnung", "Stadt", "Stadtteile", "PLZ"], axis=1)
+df = df.drop(["Antwortrate", "Antwortzeit", "Letzter Login", "Objektart", "Nebenkosten", "Kaution", "Einzugsdatum", "Stockwerk", "Außenausstattung", "Innenausstattung", "Fußboden", "Heizung", "Merkmale", "Wohnung", "Stadt", "Stadtteile", "PLZ", "Mietdauer"], axis=1)
 df = df.rename(columns={"Kaltmiete (max.)": "pref_max_price", "Wohnfläche (min.)": "pref_min_size", "Zimmer (min.)": "pref_min_rooms"})
 df = df.rename(columns={"Kaltmiete": "offer_price", "Wohnfläche": "offer_size", "Zimmer": "offer_rooms"})
 df.to_csv("new.csv")

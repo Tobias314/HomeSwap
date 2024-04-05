@@ -4,7 +4,7 @@ def start():
     df = pd.read_csv("new.csv", index_col="ID")
 
     def clean_and_convert(value):
-        cleaned_value = value.replace('€', '').replace('m²', '').replace(".", "").replace('"', "").replace(",", ".").strip()  # Remove '€', 'm²' and strip leading/trailing spaces
+        cleaned_value = value.replace('€', '').replace('m²', '').replace(".", "").replace('"', "").replace(",", ".").replace(" nicht angegeben ", "").strip()  # Remove '€', 'm²' and strip leading/trailing spaces
         try:
             return float(cleaned_value)
         except ValueError:
@@ -19,7 +19,7 @@ def start():
     df['pref_min_rooms'] = df['pref_min_rooms'].apply(clean_and_convert)
 
     df.to_csv("filtered.csv")
-    
+
     import csv_to_json
     csvFilePath = r'filtered.csv'
     jsonFilePath = r'data.json'
