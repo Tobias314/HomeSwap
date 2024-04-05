@@ -80,7 +80,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 print(passwordController.text);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PreferencePage()),
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
               );
           },
         ),

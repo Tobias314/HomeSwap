@@ -1,4 +1,5 @@
 import 'package:dating_app/pages/profile_page.dart';
+import 'package:dating_app/pages/swipe_page.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -319,7 +320,7 @@ class _PreferencePageState extends State<PreferencePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                      MaterialPageRoute(builder: (context) => SwipePage()),
                     );
                   },
                 ),

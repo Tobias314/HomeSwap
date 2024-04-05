@@ -1,5 +1,6 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dating_app/constants/colors.dart';
+import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,12 @@ class _SwipePageState extends State<SwipePage> {
         title:  Text('For You', style: TextStyle(color: ColorConstants.primaryColor, fontSize: 28, fontWeight: FontWeight.bold)),
         leading: IconButton(
           icon: Icon(Icons.person, color: ColorConstants.primaryColor,),
-          onPressed: () {},
+          onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                    );
+                  },
         ),
         actions: [
           IconButton(

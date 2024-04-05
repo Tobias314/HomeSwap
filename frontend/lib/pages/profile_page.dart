@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/preference_page.dart';
 import 'package:dating_app/pages/swipe_page.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -234,9 +235,9 @@ class _ProfilePageState extends State<ProfilePage> {
             // Photo upload
             SizedBox(height: 20),
             Text(
-              'Please upload a representative photo of your appartment:',
+              'Please send us a photo of your appartment via E-Mail to humble@hack.hpi.com, we will add this to your profile.',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -246,7 +247,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SwipePage()),
+                      MaterialPageRoute(builder: (context) => PreferencePage()),
                     );
                   },
                 ),
