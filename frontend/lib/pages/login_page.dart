@@ -1,9 +1,8 @@
 // https://www.tutorialkart.com/flutter/flutter-login-screen/#gsc.tab=0
 
+import 'package:dating_app/pages/preference_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/profile_page.dart';
-import 'pages/swipe_page.dart';
-import 'pages/preference_page.dart';
+
 
 void main() => runApp(const MyApp());
  
@@ -81,7 +80,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 print(passwordController.text);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PreferencePage()),
+                  MaterialPageRoute(builder: (context) => PreferencePage()),
               );
           },
         ),
