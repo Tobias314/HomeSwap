@@ -1,7 +1,12 @@
-// https://www.tutorialkart.com/flutter/flutter-login-screen/#gsc.tab=0
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'pages/preference_page.dart';
+import 'pages/swipe_page.dart';
 import 'pages/profile_page.dart';
+
+import '../models/ApartmentPreferenceState.dart';
+import '../cubits/currentHomeCubit.dart';
+import '../cubits/newHomePreferencesCubit.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,16 +17,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CurrentHomeCubit>(
+          create: (context) => CurrentHomeCubit(),
+        ),
+        BlocProvider<NewHomePreferencesCubit>(
+          create: (context) => NewHomePreferencesCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        title: _title,
+        home: Scaffold(
+          appBar: AppBar(title: const Text(_title)),
+          body: const MyStatefulWidget(),
+        ),
       ),
     );
   }
 }
-
+  
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
