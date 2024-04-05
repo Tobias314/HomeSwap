@@ -1,8 +1,6 @@
 // https://www.tutorialkart.com/flutter/flutter-login-screen/#gsc.tab=0
 
 import 'package:flutter/material.dart';
-import 'pages/preference_page.dart';
-import 'pages/swipe_page.dart';
 import 'pages/profile_page.dart';
 
 void main() => runApp(const MyApp());

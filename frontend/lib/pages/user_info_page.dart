@@ -1,7 +1,6 @@
-import 'package:dating_app/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
+import 'package:dating_app/constants/colors.dart';
+import 'offer_page.dart'; 
 
 class UserInfoPage extends StatefulWidget {
   UserInfoPage({Key? key, required this.image}) : super(key: key);
@@ -22,7 +21,6 @@ class _UserInfoPageState extends State<UserInfoPage> {
       rating = value;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,6 +160,11 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         child: IconButton(
                           onPressed: () {
                             setRating(index + 1);
+                            // Navigate to OfferPage after setting the rating
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => OfferPage()),
+                            );
                           },
                           icon: Icon(
                             index < rating ? Icons.star : Icons.star_border,

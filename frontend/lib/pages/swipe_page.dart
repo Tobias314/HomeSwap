@@ -3,6 +3,8 @@ import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
+import 'offer_page.dart'; 
+
 
 class SwipePage extends StatefulWidget {
   const SwipePage({Key? key}) : super(key: key);
@@ -26,7 +28,7 @@ class _SwipePageState extends State<SwipePage> {
       rating = value;
     });
   }
-
+  
   @override
   void initState() {
     super.initState();
@@ -105,6 +107,11 @@ class _SwipePageState extends State<SwipePage> {
                         child: IconButton(
                           onPressed: () {
                             setRating(index + 1);
+                            // Navigate to OfferPage after setting the rating
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => OfferPage()),
+                            );
                           },
                           icon: Icon(
                             index < rating ? Icons.star : Icons.star_border,
