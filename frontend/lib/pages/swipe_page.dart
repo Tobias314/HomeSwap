@@ -21,6 +21,13 @@ class _SwipePageState extends State<SwipePage> {
     'assets/images/example3.jpg',
   ];
 
+  int rating = 0;
+  void setRating(int value) {
+    setState(() {
+      rating = value;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -123,7 +130,33 @@ class _SwipePageState extends State<SwipePage> {
                 ),
               ],
             )
-          )
+          ),
+          Text(
+              'Rate this profile:',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                5,
+                (index) => IconButton(
+                  onPressed: () {
+                    setRating(index + 1);
+                  },
+                  icon: Icon(
+                    index < rating ? Icons.star : Icons.star_border,
+                    color: index < rating ? Colors.yellow : Colors.grey,
+                    size: 40,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'You rated this profile with $rating stars.',
+              style: TextStyle(fontSize: 16),
+            ),
         ],
       ),
     );
