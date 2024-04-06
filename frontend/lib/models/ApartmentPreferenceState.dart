@@ -11,11 +11,11 @@ class ApartmentPreferenceState {
   ApartmentPreferenceState({
     this.id = '',
     this.minRooms = '1',
-    this.maxRooms = '10+',
-    this.minSquareMeters = '<10',
-    this.maxSquareMeters = '>200',
-    this.minRent = '<100',
-    this.maxRent = '>2000',
+    this.maxRooms = '10',
+    this.minSquareMeters = '10',
+    this.maxSquareMeters = '200',
+    this.minRent = '100',
+    this.maxRent = '2000',
     this.city = 'Berlin',
   });
 

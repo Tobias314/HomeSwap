@@ -7,6 +7,7 @@ import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
 import '../api/fetch_options.dart';
+import '../api/set_user_preferences.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
@@ -158,13 +159,27 @@ class PreferencePage extends StatelessWidget {
     'Zwickau'
   ];
 
+  void save_preferences(String userid, String min_rooms, String min_size, String max_price, BuildContext context){
+    print(userid);
+      setUserPreferences(userid: userid, max_price: max_price, min_rooms: min_rooms, min_size: min_size).then((userid){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SwipePage()));
+    });
+  }
+
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('What are you looking for?'),
+          iconTheme: const IconThemeData(color: Colors.white),
+          title: const Text('Wonach suchst du?'),
           backgroundColor: const Color(0xFFEFB20A),
+          titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -172,9 +187,9 @@ class PreferencePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Preferences',
+                'Präferenzen',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -215,14 +230,14 @@ class PreferencePage extends StatelessWidget {
                   context.read<NewHomePreferencesCubit>().updateCity(value);
                 },
               ),
+              const SizedBox(height: 20,),
               // Add more BlocBuilders for other preferences
               ElevatedButton(
-                child: const Text('Submit Preferences'),
+                child: const Text('weiter'),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SwipePage()),
-                  );
+                  save_preferences(context.read<CurrentHomeCubit>().state.id, context.read<NewHomePreferencesCubit>().state.minRooms,
+                                   context.read<NewHomePreferencesCubit>().state.minSquareMeters, context.read<NewHomePreferencesCubit>().state.maxRent,
+                                   context);
                 },
               ),
             ],
@@ -244,7 +259,7 @@ class PreferencePage extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20),
           ),
           DropdownButtonFormField<String>(
             value: value,

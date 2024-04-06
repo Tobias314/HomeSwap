@@ -18,7 +18,7 @@ def get_graph(db: Session, preference_score_thresh = 1)->nx.Graph:
      g.add_edges_from(edge_list)
      return g
 
-def get_user(db: Session, user_id: str):
+def get_user(db: Session, user_id: str)->schemas.User:
     return db.query(schemas.User).filter(schemas.User.id == user_id).first()
 
 def get_user_by_username(db: Session, username: str)->schemas.User:
@@ -57,9 +57,6 @@ def write_user(db: Session, user: models.UserCreate):
     db.merge(db_user)
     db.commit()
     return db_user
-
-def get_user(db: Session, user_id: str):
-    return db.query(schemas.User).filter(schemas.User.id == user_id).first()
 
 def write_score(db: Session, score: models.Score):
     print('writing score', score)
