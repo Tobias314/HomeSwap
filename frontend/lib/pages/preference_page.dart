@@ -163,6 +163,7 @@ class PreferencePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
           title: const Text('Wonach suchst du?'),
           backgroundColor: const Color(0xFFEFB20A),
           titleTextStyle: const TextStyle(  
@@ -177,10 +178,10 @@ class PreferencePage extends StatelessWidget {
             children: [
               const Text(
                 'Präferenzen',
-                /*style: TextStyle(
-                  fontSize: 20,
+                style: TextStyle(
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
-                ),*/
+                ),
               ),
               const SizedBox(height: 20),
               buildDropdownRow(

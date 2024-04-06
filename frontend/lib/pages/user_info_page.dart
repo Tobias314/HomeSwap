@@ -26,13 +26,14 @@ class _UserInfoPageState extends State<UserInfoPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         // backgroundColor: Colors.transparent,
         leading: Padding(
           padding: const EdgeInsets.only(left: 24),
           child: IconButton(
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.white,
+              color: const Color(0xFFEFB20A),
             ),
             onPressed: () {
               Navigator.pop(context);
