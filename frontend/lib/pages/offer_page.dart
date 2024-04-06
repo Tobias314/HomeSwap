@@ -88,9 +88,9 @@ class OfferPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SwipePage()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.red, // Set the button color to red
-                  ),
+                  // style: ElevatedButton.styleFrom(
+                  //   primary: Colors.red, // Set the button color to red
+                  // ),
                   child: Text('Match ablehnen'),
                 ),
               ),

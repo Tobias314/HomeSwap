@@ -5,8 +5,13 @@ import '../models/ApartmentPreferenceState.dart';
 class CurrentHomeCubit extends Cubit<ApartmentPreferenceState> {
   CurrentHomeCubit() : super(ApartmentPreferenceState());
 
-  void updatePreference({String? minRooms, String? maxRooms, String? minSquareMeters, String? maxSquareMeters, String? minRent, String? maxRent, String? city}) {
-    emit(state.copyWith(minRooms: minRooms, maxRooms: maxRooms, minSquareMeters: minSquareMeters, maxSquareMeters: maxSquareMeters, minRent: minRent, maxRent: maxRent, city: city));
+  void updatePreference({String? id, String? minRooms, String? maxRooms, String? minSquareMeters, String? maxSquareMeters, String? minRent, String? maxRent, String? city}) {
+    emit(state.copyWith(id: id, minRooms: minRooms, maxRooms: maxRooms, minSquareMeters: minSquareMeters, maxSquareMeters: maxSquareMeters, minRent: minRent, maxRent: maxRent, city: city));
+  }
+
+   // Individual update methods for each preference
+  void updateId(String? id) {
+    emit(state.copyWith(id: id));
   }
 
   // Individual update methods for each preference

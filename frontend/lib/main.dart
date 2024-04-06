@@ -7,6 +7,7 @@ import 'pages/profile_page.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
+import '../api/login.dart';
 
 void main() => runApp(const MyApp());
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         title: _title,
         home: Scaffold(
           appBar: AppBar(title: const Text(_title)),
-          body: const MyStatefulWidget(),
+          body: MyStatefulWidget(),
         ),
       ),
     );
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
 }
   
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+  MyStatefulWidget({Key? key}) : super(key: key);
  
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
@@ -47,6 +48,22 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  String userid = '';
+  bool apiCall = false;
+
+  void _call_login_api(){
+    login(username: nameController.text, password: passwordController.text).then((userid){
+      setState(() {
+        this.userid = userid;
+      });
+      print('RESULT');
+      print('PUSHING');
+      context.read<CurrentHomeCubit>().updateId(userid);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PreferencePage()),);
+    });
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -89,12 +106,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ElevatedButton(
               child: const Text('Sign In'),
               onPressed: () {
+                setState((){
+                    apiCall=true; // Set state like this
+                    _call_login_api();
+                  });
                 print(nameController.text);
                 print(passwordController.text);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfilePage()),
-                );
+                //Future<String>? _userid_future;
               },
             ),
           ],

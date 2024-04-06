@@ -6,8 +6,9 @@ from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+from .data import models
 from .data import db_interface
-from .data.db_interface import get_graph, get_user, get_users
+from .data.db_interface import get_graph, get_user, get_users, get_user_by_username
 from .data import models
 from .data.schemas import SessionLocal
 from .optimize import optimize
@@ -28,6 +29,24 @@ def get_db():
         yield db
     finally:
         db.close()
+
+@app.post("/login")
+def get_user(user: models.UserCreate, db: Session = Depends(get_db))->str:
+    db_user = db_interface.get_user_by_username(db=db, username=user.username)
+    if db_user is None:
+        print('creating user')
+        user = models.User(id=user.username, username=user.username, pw=user.pw, pref_min_size=0, pref_max_prize=0, pref_min_rooms=0, offer_prize=0, offer_size=0, offer_rooms=0, img_url='')
+        db_interface.write_user(db=db, user=user)
+        id = user.username
+        print('created user')
+    else:
+        if db_user.pw != pw:
+            print('User exists but pw is wrong')
+            raise HTTPException(status_code=404, detail="User exists but password is wrong")
+        else:
+            id = db_user.id
+    return id
+
 
 @app.get("/users/{user_id}", response_model=models.User)
 def get_user(user_id: str, db: Session = Depends(get_db)):
@@ -68,6 +87,16 @@ def create_preference(
     user_id_a: str, user_id_b: str, score: float, db: Session = Depends(get_db)
 ):
     return db_interface.write_score(db=db, score=models.Score(user_a_id=user_id_a, user_b_id=user_id_b, preference_score=score))
+
+@app.post("/user/{user_id_a}/set_preferences")
+def set_preferences(
+    user_id: str, preferences_config: models.PreferencesConfig,  db: Session = Depends(get_db)
+):
+    user = db_interface.get_user(db=db, user_id=user_id)
+    user.pref_min_size = preferences_config.min_size
+    user.pref_max_prize = preferences_config.max_price
+    user.pref_min_rooms = preferences_config.min_rooms
+    db_interface.write_user(db=db, user=user)
 
 # @app.get("/users/{user_id}/fetch_options", response_model=models.User)
 # def get_user(user_id: str, db: Session = Depends(get_db)):
