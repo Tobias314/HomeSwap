@@ -13,7 +13,7 @@ class ConfettiSample extends StatelessWidget {
     return MaterialApp(
         title: 'Confetti',
         home: Scaffold(
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           body: ConfettiPage(),
         ));
   }
@@ -104,6 +104,8 @@ class _ConfettiPageState extends State<ConfettiPage> {
                 Color.fromARGB(255, 253, 211, 74), 
                 Color.fromARGB(255, 193, 72, 2), 
                 Color.fromARGB(255, 253, 211, 74), 
+                Color.fromARGB(255, 200, 151, 241),
+                Color.fromARGB(255, 163, 193, 118),
               ], // manually specify the colors to be used
               createParticlePath: drawStar, // define a custom shape/path.
             ),
@@ -114,7 +116,7 @@ class _ConfettiPageState extends State<ConfettiPage> {
               onPressed: () {},
               child: const Text(
                 'Glückwunsch!',
-                style: TextStyle(color: Colors.black, fontSize: 30),
+                style: TextStyle(color: const Color(0xFFEFB20A), fontSize: 50, fontWeight: FontWeight.bold),
               ),
             ),
             ),

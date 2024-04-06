@@ -173,8 +173,13 @@ class PreferencePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('What are you looking for?'),
+          iconTheme: const IconThemeData(color: Colors.white),
+          title: const Text('Wonach suchst du?'),
           backgroundColor: const Color(0xFFEFB20A),
+          titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -182,9 +187,9 @@ class PreferencePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Preferences',
+                'Präferenzen',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -225,9 +230,10 @@ class PreferencePage extends StatelessWidget {
                   context.read<NewHomePreferencesCubit>().updateCity(value);
                 },
               ),
+              const SizedBox(height: 20,),
               // Add more BlocBuilders for other preferences
               ElevatedButton(
-                child: const Text('Submit Preferences'),
+                child: const Text('weiter'),
                 onPressed: () {
                   save_preferences(context.read<CurrentHomeCubit>().state.id, context.read<NewHomePreferencesCubit>().state.minRooms,
                                    context.read<NewHomePreferencesCubit>().state.minSquareMeters, context.read<NewHomePreferencesCubit>().state.maxRent,
@@ -253,7 +259,7 @@ class PreferencePage extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20),
           ),
           DropdownButtonFormField<String>(
             value: value,

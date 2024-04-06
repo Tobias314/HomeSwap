@@ -27,50 +27,48 @@ class _ProfilePageState extends State<ProfilePage> {
     '7',
     '8',
     '9',
-    '10+'
+    '10'
   ];
 
-  List<String> Quadratmeter = [
-    '<10',
-    '10-20',
-    '20-30',
-    '30-40',
-    '40-50',
-    '50-60',
-    '60-70',
-    '70-80',
-    '80-90',
-    '90-100',
-    '100-110',
-    '110-120',
-    '120-130',
-    '130-140',
-    '140-150',
-    '150-160',
-    '160-170',
-    '170-180',
-    '180-190',
-    '190-200',
-    '>200'
+List<String> Quadratmeter = [
+    '10',
+    '20',
+    '30',
+    '40',
+    '50',
+    '60',
+    '70',
+    '80',
+    '90',
+    '100',
+    '110',
+    '120',
+    '130',
+    '140',
+    '150',
+    '160',
+    '170',
+    '180',
+    '190',
+    '200'
   ];
  
   List<String> Mietpreis = [
-    '<100',
-    '100-200',
-    '200-300',
-    '300-400',
-    '400-500',
-    '500-600',
-    '600-700',
-    '700-800',
-    '800-900',
-    '900-1000',
-    '1000-1200',
-    '1200-1400',
-    '1400-1600',
-    '1600-1800',
-    '1800-2000',
-    '>2000'
+    '100',
+    '200',
+    '300',
+    '400',
+    '500',
+    '600',
+    '700',
+    '800',
+    '900',
+    '1000',
+    '1200',
+    '1400',
+    '1600',
+    '1800',
+    '2000'
   ];
   
   List<String> Stadt = [
@@ -174,25 +172,30 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('What do you have to offer'),
-        backgroundColor: const Color(0xFFEFB20A),
-      ),
+          iconTheme: const IconThemeData(color: Colors.white),
+          title: const Text('Was bietest du an?'),
+          backgroundColor: const Color(0xFFEFB20A),
+          titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
+        ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [ 
               const Text(
-                'Please fill in information about your appartment:',
+                'eigene Angaben',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 20),
             
               buildDropdownRow(
-                label: 'Mind. Zimmerzahl',
+                label: 'Zimmerzahl',
                 value: selectedZimmer,
                 items: Zimmeranzahl,
                 onChanged: (String? value) {
@@ -201,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 },
               ),
               buildDropdownRow(
-                label: 'Mind. Quadratmeter',
+                label: 'Quadratmeter',
                 value: selectedQuadratmeter,
                 items: Quadratmeter,
                 onChanged: (String? value) {
@@ -232,7 +235,7 @@ class _ProfilePageState extends State<ProfilePage> {
               // Photo upload
               const SizedBox(height: 20),
               const Text(
-                'Please send us a photo of your appartment via E-Mail to homeswap@hack.hpi.com, we will add this to your profile.',
+                'Bitte sende uns ein Foto Ihrer Wohnung per E-Mail an homeswap@hack.hpi.com, wir fügen es dann deinem Profil hinzu.',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -240,7 +243,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
 
               ElevatedButton(
-                    child: const Text('Submit'),
+                    child: const Text('weiter'),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -267,7 +270,7 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Text(
             label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize:20),
           ),
           DropdownButtonFormField<String>(
             value: value,
