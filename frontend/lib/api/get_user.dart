@@ -1,11 +1,12 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<void> fetchMatchingOffers({
+// Not tested yet
+Future<void> getUser({
   required String ID
 }) async {
   final response = await http.get(
-    Uri.parse('https://d2ed-2001-638-807-23a-bfba-ff45-f08c-ffad.ngrok-free.app/users/$ID/fetch_options'),
+    Uri.parse('https://d2ed-2001-638-807-23a-bfba-ff45-f08c-ffad.ngrok-free.app/users/$ID'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
       'ngrok-skip-browser-warning': '1'
@@ -14,17 +15,16 @@ Future<void> fetchMatchingOffers({
 
   if (response.statusCode == 200) {
     // Parse the JSON response
-    String body = String.fromCharCodes(response.bodyBytes);
+    String body = new String.fromCharCodes(response.bodyBytes);
     final data = jsonDecode(body);
-    print('Matching options: ${data[0]}');
-    return data[0];
+    print('User info: ${data[0]}');
   } else {
     // Handle errors
-    print('Failed to fetch matching options. Status Code: ${response.statusCode}');
+    print('Failed to fetch matching offers. Status Code: ${response.statusCode}');
   }
 }
 
-Future<void> test_fetch_options() async {
+Future<void> test_getUser() async {
   // Mock data for testing
-  return await fetchMatchingOffers(ID: "a");
+  return await getUser(ID: "a");
 }

@@ -39,14 +39,15 @@ class MyApp extends StatelessWidget {
   
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
-
+ 
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
-
+ 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,9 +55,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: ListView(
           children: <Widget>[
             Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(10),
-            ),
+                alignment: Alignment.center,
+                padding: const EdgeInsets.all(10),
+                ),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),

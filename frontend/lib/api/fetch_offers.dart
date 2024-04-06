@@ -1,37 +1,29 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<void> submitUserPreferencesAndOffer({
-  required int ID,
-  required String offerPrice,
-  required String offerSize,
-  required int offerRooms,
-  required String prefMaxPrice,
-  required String prefMinSize,
-  required int prefMinRooms,
+Future<void> fetchMatchingOffers({
+  required String ID
 }) async {
-  final response = await http.post(
-    Uri.parse('https://your-api-domain.com/api/offers/match'),
+  final response = await http.get(
+    Uri.parse('https://d2ed-2001-638-807-23a-bfba-ff45-f08c-ffad.ngrok-free.app/users/$ID/fetch_offers'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
+      'ngrok-skip-browser-warning': '1'
     },
-    body: jsonEncode(<String, dynamic>{
-      "ID": ID,
-      "offer_price": offerPrice,
-      "offer_size": offerSize,
-      "offer_rooms": offerRooms,
-      "pref_max_price": prefMaxPrice,
-      "pref_min_size": prefMinSize,
-      "pref_min_rooms": prefMinRooms,
-    }),
   );
 
   if (response.statusCode == 200) {
     // Parse the JSON response
-    final data = jsonDecode(response.body);
-    print('Response data: $data');
+    String body = new String.fromCharCodes(response.bodyBytes);
+    final data = jsonDecode(body);
+    print('Matching offers: ${data[0]}');
   } else {
     // Handle errors
-    print('Failed to submit user preferences and offer. Status Code: ${response.statusCode}');
+    print('Failed to fetch matching offers. Status Code: ${response.statusCode}');
   }
+}
+
+Future<void> test_fetch_options() async {
+  // Mock data for testing
+  return await fetchMatchingOffers(ID: "a");
 }
