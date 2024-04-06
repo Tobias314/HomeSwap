@@ -13,7 +13,7 @@ def extract_int(value):
 
 df = pd.DataFrame()
 
-for x in range(50):
+for x in range(1):
     x = x + 1
     print(f"Scraping site {x} of {Max_Resultes}")
     url = f"https://www.tauschwohnung.com/search/result?city=Berlin&housing_type=1&storey_min=-1&storey_max=100&sort=standard&page={x}"
@@ -73,9 +73,11 @@ for x in range(50):
             articel_id = item_soup.find('p', 'grey mb-0 pb-0').find('small').text.strip()
             articel_id = extract_int(articel_id)[0]
 
-            image_url = item_soup.find("img", "embed-responsive-item d-block w-100").get("src")
-
-            extracted_item["img_url"] = "https://www.tauschwohnung.com" + image_url
+            try:
+                image_url = item_soup.find("img", "embed-responsive-item d-block w-100").get("src")
+                extracted_item["img_url"] = "https://www.tauschwohnung.com" + image_url
+            except:
+                extracted_item["img_url"] = "N/A"
 
             # df = pd.DataFrame([extracted_details, extracted_characteristics, extracted_item])
             # print(df)
@@ -87,9 +89,15 @@ for x in range(50):
 
 df.to_csv("t.csv")
 df.to_json("t.json")
-df = df.drop(["Antwortrate", "Antwortzeit", "Letzter Login", "Objektart", "Nebenkosten", "Kaution", "Einzugsdatum", "Stockwerk", "Außenausstattung", "Innenausstattung", "Fußboden", "Heizung", "Merkmale", "Wohnung", "Stadt", "Stadtteile", "PLZ", "Mietdauer"], axis=1)
+df = df.drop(["Antwortrate", "Antwortzeit", "Letzter Login", "Objektart", "Nebenkosten", "Kaution", "Einzugsdatum", "Stockwerk", "Außenausstattung", "Innenausstattung", "Fußboden", "Heizung", "Merkmale", "Wohnung", "Stadtteile"], axis=1)
+if 'PLZ' in df.columns:
+    df = df.drop(["PLZ"], axis=1)
+elif "Mietdauer" in df.columns:
+    df = df.drop(["Mietdauer"], axis=1)
+
 df = df.rename(columns={"Kaltmiete (max.)": "pref_max_price", "Wohnfläche (min.)": "pref_min_size", "Zimmer (min.)": "pref_min_rooms"})
 df = df.rename(columns={"Kaltmiete": "offer_price", "Wohnfläche": "offer_size", "Zimmer": "offer_rooms"})
+df = df.rename(columns={"Stadt": "pref_city"})
 df.to_csv("new.csv")
 import clean_csv
 clean_csv.start()
