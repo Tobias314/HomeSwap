@@ -3,6 +3,9 @@ import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import '../api/fetch_options.dart';
+import '../api/send_preference.dart';
 import 'offer_page.dart'; 
 
 
@@ -15,24 +18,24 @@ class SwipePage extends StatefulWidget {
 
 class _SwipePageState extends State<SwipePage> {
   List<ProfileCard> profile = [];
+  var optionID;
 
-  List<String> images = [
-    'assets/images/example1.jpg',
-    'assets/images/example2.jpg',
-    'assets/images/example3.jpg',
-  ];
+  // List<String> images = [
+  //   'assets/images/example1.jpg',
+  //   'assets/images/example2.jpg',
+  //   'assets/images/example3.jpg',
+  // ];
 
   int rating = 0;
-  void setRating(int value) {
-    setState(() {
-      rating = value;
-    });
+  void setRating(String myID, String theirID, int score) {
+    // Update the Cubit state
+    sendPreferences(myID: myID, theirID: theirID, score:score);
   }
   
   @override
   void initState() {
     super.initState();
-    _loadCards();
+    optionID = _loadCards();
   }
 
   @override
@@ -106,7 +109,8 @@ class _SwipePageState extends State<SwipePage> {
                             horizontal: 15.0), // Adjust spacing between stars
                         child: IconButton(
                           onPressed: () {
-                            setRating(index + 1);
+                            String myID = getMyID();
+                            setRating(myID, optionID, index + 1);
                             // Navigate to OfferPage after setting the rating
                             Navigator.push(
                               context,
@@ -134,9 +138,20 @@ class _SwipePageState extends State<SwipePage> {
     );
   }
 
-  void _loadCards() {
+  Future<String> _loadCards() async{
+    // TODO: make work
+    String myID = getMyID();
+    final data = await fetchMatchingOptions(ID: myID); 
+    List<String> images = data['images'];
     for (String image in images) {
       profile.add(ProfileCard(image: image));
     }
+    return data['ID'];
   }
+
+  String getMyID(){
+    // TODO implement as Cubit
+    return "a";
+  }
+
 }
