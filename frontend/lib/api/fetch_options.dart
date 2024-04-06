@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<void> fetchMatchingOffers({
+Future<dynamic> fetchMatchingOptions({
   required String ID
 }) async {
   final response = await http.get(
@@ -26,5 +26,5 @@ Future<void> fetchMatchingOffers({
 
 Future<void> test_fetch_options() async {
   // Mock data for testing
-  return await fetchMatchingOffers(ID: "a");
+  return await fetchMatchingOptions(ID: "a");
 }

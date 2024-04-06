@@ -1,7 +1,10 @@
 import 'package:dating_app/pages/preference_page.dart';
 import 'package:dating_app/pages/swipe_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:settings_ui/settings_ui.dart';
+
+import '../cubits/currentHomeCubit.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -177,119 +180,113 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Please fill in information about your appartment:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            children: [ 
+              const Text(
+                'Please fill in information about your appartment:',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Table(
-              children: [
-                buildDropdownRow(
-                  label: 'Zimmerzahl',
-                  value: selectedZimmer,
-                  items: Zimmeranzahl,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedZimmer = value ?? selectedZimmer;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Quadratmeter',
-                  value: selectedQuadratmeter,
-                  items: Quadratmeter,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedQuadratmeter = value ?? selectedQuadratmeter;
-                    });
-                  },
-                ),
-                buildDropdownRow(
-                  label: 'Mietpreis',
-                  value: selectedMietpreis,
-                  items: Mietpreis,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedMietpreis = value ?? selectedMietpreis;
-                    });
-                  },
-                ),
-          
-                buildDropdownRow(
-                  label: 'Stadt',
-                  value: selectedStadt,
-                  items: Stadt,
-                  onChanged: (String? value) {
-                    setState(() {
-                      selectedStadt = value ?? selectedStadt;
-                    });
-                  },
-                ),
-              ],
-            ),
-
-            // Photo upload
-            SizedBox(height: 20),
-            Text(
-              'Please send us a photo of your appartment via E-Mail to humble@hack.hpi.com, we will add this to your profile.',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              const SizedBox(height: 20),
+            
+              buildDropdownRow(
+                label: 'Mind. Zimmerzahl',
+                value: selectedZimmer,
+                items: Zimmeranzahl,
+                onChanged: (String? value) {
+                  // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMinRooms(value);
+                },
               ),
-            ),
-
-            ElevatedButton(
-                  child: const Text('Submit'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PreferencePage()),
-                    );
-                  },
+              buildDropdownRow(
+                label: 'Mind. Quadratmeter',
+                value: selectedQuadratmeter,
+                items: Quadratmeter,
+                onChanged: (String? value) {
+                  // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMinSquareMeters(value);
+                },
+              ),
+              buildDropdownRow(
+                label: 'Mietpreis',
+                value: selectedMietpreis,
+                items: Mietpreis,
+                onChanged: (String? value) {
+                  // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateMaxRent(value);
+                },
+              ),
+        
+              buildDropdownRow(
+                label: 'Stadt',
+                value: selectedStadt,
+                items: Stadt,
+                onChanged: (String? value) {
+                  // Update the Cubit state
+                  context.read<CurrentHomeCubit>().updateCity(value);
+                },
+              ),
+            
+              // Photo upload
+              const SizedBox(height: 20),
+              const Text(
+                'Please send us a photo of your appartment via E-Mail to humble@hack.hpi.com, we will add this to your profile.',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
-          ],
+              ),
+
+              ElevatedButton(
+                    child: const Text('Submit'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PreferencePage()),
+                      );
+                    },
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 
-  TableRow buildDropdownRow({
+  Widget buildDropdownRow({
     required String label,
     required String value,
     required List<String> items,
     required void Function(String?) onChanged,
   }) {
-    return TableRow(
-      children: [
-        TableCell(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              label,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-        ),
-        TableCell(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: DropdownButtonFormField<String>(
-              value: value,
-              items: items.map((item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(item),
-                );
-              }).toList(),
-              onChanged: onChanged,
+          DropdownButtonFormField<String>(
+            value: value,
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
             ),
+            items: items.map((String item) {
+              return DropdownMenuItem<String>(
+                value: item,
+                child: Text(item),
+              );
+            }).toList(),
+            onChanged: onChanged,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
+
 }
