@@ -9,6 +9,7 @@ class UserBase(BaseModel):
     offer_prize: float
     offer_size: float
     offer_rooms: int
+    img_url: str
 
 class UserCreate(UserBase):
     pass
@@ -23,6 +24,7 @@ class User(UserBase):
     offer_prize: float
     offer_size: float
     offer_rooms: int
+    img_url: str
 
     class Config:
         from_attributes = True

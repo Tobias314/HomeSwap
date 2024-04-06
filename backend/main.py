@@ -4,13 +4,22 @@ from fastapi import FastAPI
 import networkx as nx
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from .data import db_interface
-from .data.db_interface import filter_users_by_preferences, get_graph, get_user, get_users
+from .data.db_interface import get_graph, get_user, get_users
 from .data import models
 from .data.schemas import SessionLocal
+from .optimize import optimize
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins='*',
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Dependency
 def get_db():
@@ -36,7 +45,8 @@ def fetch_options(user_id: str, db: Session = Depends(get_db)):
 @app.get("/users/{user_id}/fetch_offers")
 def fetch_offers(user_id: str, db: Session = Depends(get_db)):
     g = get_graph(db=db)
-    cycles = nx.simple_cycles(g)
+    cycles = optimize(g)
+    # cycles = nx.simple_cycles(g)
     best_cycle = None
     best_cycle_min_score = 0
     for c in cycles:
@@ -47,7 +57,7 @@ def fetch_offers(user_id: str, db: Session = Depends(get_db)):
             if min_score > best_cycle_min_score:
                 best_cycle_min_score = min_score
                 best_cycle = c
-    if c is not None:
+    if best_cycle is not None:
         my_user_id = c.index(user_id)
         return {'move_to_user_id': best_cycle[(my_user_id + 1) % len(best_cycle)],
                 'subsequent_tenant_user_id': best_cycle[(my_user_id - 1 + len(best_cycle)) % len(best_cycle)]}
