@@ -8,6 +8,7 @@ import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../api/login.dart';
 
 void main() => runApp(const MyApp());
 
@@ -72,7 +73,23 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  String userid = '';
+  bool apiCall = false;
 
+  void _call_login_api(){
+    login(username: nameController.text, password: passwordController.text).then((userid){
+      setState(() {
+        this.userid = userid;
+      });
+      print('RESULT');
+      print('PUSHING');
+      context.read<CurrentHomeCubit>().updateId(userid);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PreferencePage()),);
+    });
+  }
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -132,12 +149,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ElevatedButton(
               child: const Text('Sign In'),
               onPressed: () {
+                setState((){
+                    apiCall=true; // Set state like this
+                    _call_login_api();
+                  });
                 print(nameController.text);
                 print(passwordController.text);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfilePage()),
-                );
+                //Future<String>? _userid_future;
               },
             ),
           ],

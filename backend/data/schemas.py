@@ -21,7 +21,7 @@ from sqlalchemy.orm import relationship
 class User(Base):
     __tablename__ = "users"
     id = mapped_column(String, primary_key=True)
-    email = mapped_column(String)
+    username = mapped_column(String, index=True)
     pw = mapped_column(String)
     pref_min_size = mapped_column(Float)
     pref_max_prize = mapped_column(Float)

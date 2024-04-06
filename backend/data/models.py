@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class UserBase(BaseModel):
-    email: str
+    username: str
     pw: str
     pref_min_size: float
     pref_max_prize: float
@@ -9,23 +9,22 @@ class UserBase(BaseModel):
     offer_prize: float
     offer_size: float
     offer_rooms: int
+    img_url: str
 
-class UserCreate(UserBase):
-    pass
+class UserCreate(BaseModel):
+    username: str
+    pw: str
 
 class User(UserBase):
     id: str
-    email: str
-    pw: str
-    pref_min_size: float
-    pref_max_prize: float
-    pref_min_rooms: int
-    offer_prize: float
-    offer_size: float
-    offer_rooms: int
 
     class Config:
         from_attributes = True
+
+class PreferencesConfig(BaseModel):
+    max_price: str
+    min_size: str
+    min_rooms:str
 
 class Score(BaseModel):
     user_a_id: str

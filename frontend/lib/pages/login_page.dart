@@ -2,6 +2,7 @@
 
 import 'package:dating_app/pages/preference_page.dart';
 import 'package:flutter/material.dart';
+import '../api/login.dart';
 
 
 void main() => runApp(const MyApp());
@@ -79,10 +80,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
               child: const Text('Sign In'),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PreferencePage()),
-              );
+                print(nameController.text);
+                print('lol');
+                print(passwordController.text);
+                Future<String?>? _userid_future;
+                _userid_future = login(username: nameController.text, password: passwordController.text);
+                FutureBuilder<String?>(
+                future: _userid_future,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(snapshot.data!);
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PreferencePage()),);
+                  return const CircularProgressIndicator();
+                },);
           },
         ),
           ],

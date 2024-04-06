@@ -13,12 +13,12 @@ if p.exists():
 db = SessionLocal()
 
 mock_users: List[User] = [
-    User(id='a', email='a@test', pw='pw', pref_min_size=12, pref_max_prize=600, pref_min_rooms=2,
-         offer_prize=300, offer_size=10, offer_rooms=1),
-    User(id='b', email='b@test', pw='pw', pref_min_size=20, pref_max_prize=800, pref_min_rooms=3,
-         offer_prize=500, offer_size=15, offer_rooms=2),
-    User(id='c', email='c@test', pw='pw', pref_min_size=7, pref_max_prize=400, pref_min_rooms=1,
-         offer_prize=700, offer_size=20, offer_rooms=3),
+    User(id='a', username='a', pw='pw', pref_min_size=12, pref_max_prize=600, pref_min_rooms=2,
+         offer_prize=300, offer_size=10, offer_rooms=1, img_url="https://www.tauschwohnung.com/uploads/housings/164299/medium/f3066824cfd9fb67d654cb77bd9bd373fb8a7289.jpg"),
+    User(id='b', username='b', pw='pw', pref_min_size=20, pref_max_prize=800, pref_min_rooms=3,
+         offer_prize=500, offer_size=15, offer_rooms=2, img_url='https://www.tauschwohnung.com/uploads/housings/164299/medium/f3066824cfd9fb67d654cb77bd9bd373fb8a7289.jpg'),
+    User(id='c', username='c', pw='pw', pref_min_size=7, pref_max_prize=400, pref_min_rooms=1,
+         offer_prize=700, offer_size=20, offer_rooms=3, img_url='https://www.tauschwohnung.com/uploads/housings/164299/medium/f3066824cfd9fb67d654cb77bd9bd373fb8a7289.jpg'),
 ]
 
 mock_scores = [

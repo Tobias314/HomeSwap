@@ -1,4 +1,5 @@
 class ApartmentPreferenceState {
+  final String id;
   final String minRooms;
   final String maxRooms;
   final String minSquareMeters;
@@ -8,6 +9,7 @@ class ApartmentPreferenceState {
   final String city;
 
   ApartmentPreferenceState({
+    this.id = '',
     this.minRooms = '1',
     this.maxRooms = '10+',
     this.minSquareMeters = '<10',
@@ -18,6 +20,7 @@ class ApartmentPreferenceState {
   });
 
   ApartmentPreferenceState copyWith({
+    String? id,
     String? minRooms,
     String? maxRooms,
     String? minSquareMeters,
@@ -27,6 +30,7 @@ class ApartmentPreferenceState {
     String? city,
   }) {
     return ApartmentPreferenceState(
+      id: id ?? this.id,
       minRooms: minRooms ?? this.minRooms,
       maxRooms: maxRooms ?? this.maxRooms,
       minSquareMeters: minSquareMeters ?? this.minSquareMeters,
