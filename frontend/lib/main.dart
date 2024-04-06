@@ -38,10 +38,6 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text(_title),
             backgroundColor: const Color(0xFFEFB20A),
-            titleTextStyle: const TextStyle(  
-              color: Colors.white,
-              fontSize: 30,
-              )
           ),
           body: const MyStatefulWidget(),
         ),
