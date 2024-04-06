@@ -92,7 +92,7 @@ class OfferPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () { 
                     // Add your logic for "Match akzeptieren" button press here
                     print('Match abgelehnt pressed for ${imageData.name}');
                     Navigator.push(

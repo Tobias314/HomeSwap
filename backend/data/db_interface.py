@@ -8,8 +8,13 @@ from . import models, schemas
 
 from .models import User, Score
 
-def get_graph(db: Session, preference_score_thresh = 1)->nx.Graph:
+
+def get_scores(db: Session)->List[schemas.Score]:
      scores = db.query(schemas.Score).all()
+     return scores
+
+def get_graph(db: Session, preference_score_thresh = 1)->nx.Graph:
+     scores = get_scores(db, preference_score_thresh=preference_score_thresh)
      edge_list = []
      for s in scores:
           if s.preference_score >= preference_score_thresh:

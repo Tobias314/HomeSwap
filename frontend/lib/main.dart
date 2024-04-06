@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/offer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'pages/preference_page.dart';

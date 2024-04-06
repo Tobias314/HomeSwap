@@ -22,7 +22,7 @@ mock_users: List[User] = [
 ]
 
 mock_scores = [
-     Score(user_a_id='a', user_b_id='b', preference_score=1.0),
+     #Score(user_a_id='a', user_b_id='b', preference_score=1.0),
      Score(user_a_id='b', user_b_id='c', preference_score=1.0),
      Score(user_a_id='c', user_b_id='a', preference_score=1.0),
 ]

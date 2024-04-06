@@ -12,6 +12,7 @@ from .data.db_interface import get_graph, get_user, get_users, get_user_by_usern
 from .data import models
 from .data.schemas import SessionLocal
 from .optimize import optimize
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 app.add_middleware(
@@ -21,6 +22,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+#app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Dependency
 def get_db():
@@ -59,6 +61,9 @@ def get_user(user_id: str, db: Session = Depends(get_db)):
 def fetch_options(user_id: str, db: Session = Depends(get_db)):
     db_user = db_interface.get_user(db=db, user_id=user_id)
     res = db_interface.filter_users(db=db, min_size=db_user.pref_min_size, max_prize=db_user.pref_max_prize, min_rooms=db_user.pref_min_rooms)
+    scores = db_interface.get_scores(db=db)
+    already_viewed = set([s.user_b_id for s in scores if s.user_a_id == user_id])
+    res = [u for u in res if u.id not in already_viewed]
     return res
 
 @app.get("/users/{user_id}/fetch_offers")
@@ -97,6 +102,17 @@ def set_preferences(
     user.pref_min_size = float(preferences_config.min_size)
     user.pref_max_prize = float(preferences_config.max_price)
     user.pref_min_rooms = int(preferences_config.min_rooms)
+    db_interface.write_user(db=db, user=user)
+
+@app.post("/user/{user_id}/set_profile")
+def set_preferences(
+    user_id: str, profile_config: models.ProfileConfig,  db: Session = Depends(get_db)
+):
+    print('user_id', user_id)
+    user = db_interface.get_user(db=db, user_id=user_id)
+    user.offer_size = float(profile_config.size)
+    user.offer_prize = float(profile_config.price)
+    user.offer_rooms = int(profile_config.rooms)
     db_interface.write_user(db=db, user=user)
 
 # @app.get("/users/{user_id}/fetch_options", response_model=models.User)
