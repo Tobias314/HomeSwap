@@ -1,3 +1,4 @@
+import 'package:dating_app/api/set_user_profile.dart';
 import 'package:dating_app/pages/preference_page.dart';
 import 'package:dating_app/pages/swipe_page.dart';
 import 'package:flutter/material.dart';
@@ -70,6 +71,15 @@ List<String> Quadratmeter = [
     '1800',
     '2000'
   ];
+
+  void save_profile(String userid, String rooms, String size, String price, BuildContext context){
+    print(userid);
+      setUserProfile(userid: userid, price: price, rooms: rooms, size: size).then((userid){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PreferencePage()));
+    });
+  }
   
   List<String> Stadt = [
     'Aachen',
@@ -245,10 +255,10 @@ List<String> Quadratmeter = [
               ElevatedButton(
                     child: const Text('weiter'),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PreferencePage()),
-                      );
+                      
+                      save_profile(context.read<CurrentHomeCubit>().state.id, context.read<CurrentHomeCubit>().state.minRooms,
+                                   context.read<CurrentHomeCubit>().state.minSquareMeters, context.read<CurrentHomeCubit>().state.maxRent,
+                                   context);
                     },
               ),
             ],

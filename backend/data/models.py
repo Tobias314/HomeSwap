@@ -26,6 +26,11 @@ class PreferencesConfig(BaseModel):
     min_size: str
     min_rooms:str
 
+class ProfileConfig(BaseModel):
+    price: str
+    size: str
+    rooms:str
+
 class Score(BaseModel):
     user_a_id: str
     user_b_id: str
