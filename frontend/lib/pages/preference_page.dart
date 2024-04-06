@@ -243,13 +243,12 @@ class PreferencePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Example for one preference, you can extend it similarly
               buildDropdownRow(
                 label: 'Zimmerzahl Minimum',
                 value: selectedMinZimmer, // Your state variable holding the current value
                 items: Zimmeranzahl_Min, // Your list of options for the dropdown
                 onChanged: (String? value) {
-                   // Update the Cubit state
+                  // Update the Cubit state
                   context.read<NewHomePreferencesCubit>().updateMinRooms(value);
                 },
               ),
@@ -330,7 +329,7 @@ class PreferencePage extends StatelessWidget {
     required void Function(String?) onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
