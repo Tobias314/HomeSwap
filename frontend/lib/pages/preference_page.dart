@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
+import '../api/fetch_options.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
