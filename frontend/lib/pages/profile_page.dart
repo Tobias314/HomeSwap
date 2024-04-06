@@ -176,6 +176,10 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         title: Text('What do you have to offer'),
         backgroundColor: const Color(0xFFEFB20A),
+        titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -185,7 +189,7 @@ class _ProfilePageState extends State<ProfilePage> {
               const Text(
                 'Please fill in information about your appartment:',
                 style: TextStyle(
-                  fontSize: 20,
+                  // fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -267,7 +271,7 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Text(
             label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize:20),
           ),
           DropdownButtonFormField<String>(
             value: value,

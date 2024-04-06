@@ -13,7 +13,7 @@ class ConfettiSample extends StatelessWidget {
     return MaterialApp(
         title: 'Confetti',
         home: Scaffold(
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           body: ConfettiPage(),
         ));
   }

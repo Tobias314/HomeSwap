@@ -45,17 +45,16 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text('For You',
-            style: TextStyle(
-                color: ColorConstants.primaryColor,
-                fontSize: 28,
-                fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFFEFB20A),
+        titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              ),
+        title: const Text('For You',),
         leading: IconButton(
           icon: Icon(
             Icons.person,
-            color: ColorConstants.primaryColor,
+            color: Colors.white,
           ),
           onPressed: () {
             Navigator.push(
@@ -66,9 +65,9 @@ class _SwipePageState extends State<SwipePage> {
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.message,
-              color: ColorConstants.primaryColor,
+              color: Colors.white,
             ),
             onPressed: () {},
           ),
@@ -101,7 +100,7 @@ class _SwipePageState extends State<SwipePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
@@ -130,7 +129,7 @@ class _SwipePageState extends State<SwipePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
