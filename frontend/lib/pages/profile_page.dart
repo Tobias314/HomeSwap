@@ -13,8 +13,8 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   String selectedZimmer = '1';
-  String selectedQuadratmeter = '<10';
-  String selectedMietpreis = '<100';
+  String selectedQuadratmeter = '10';
+  String selectedMietpreis = '100';
   String selectedStadt = 'Berlin';
 
   List<String> Zimmeranzahl = [

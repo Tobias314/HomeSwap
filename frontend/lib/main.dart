@@ -7,7 +7,7 @@ import 'pages/profile_page.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart' as google_fonts_manifest;
 import '../api/login.dart';
 
 void main() => runApp(const MyApp());
@@ -39,16 +39,16 @@ class MyApp extends StatelessWidget {
               fontSize: 72,
               fontWeight: FontWeight.bold,
             ),
-            titleLarge: GoogleFonts.raleway(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            ),
-            bodyMedium: GoogleFonts.raleway(
-              fontSize: 20,
-            ),
-            displaySmall: GoogleFonts.rubik(
-              fontSize: 20,
-            ),
+ //           titleLarge: google_fonts_manifest.GoogleFonts.raleway(
+ //             fontSize: 40,
+ //             fontWeight: FontWeight.bold,
+ //           ),
+ //           bodyMedium: google_fonts_manifest.GoogleFonts.raleway(
+ //             fontSize: 20,
+ ////           ),
+ //           displaySmall: google_fonts_manifest.GoogleFonts.rubik(
+ //             fontSize: 20,
+ //           ),
           ),
         ),
         home: Scaffold(

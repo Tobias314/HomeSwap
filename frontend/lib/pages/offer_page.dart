@@ -75,7 +75,7 @@ class OfferPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 255, 213, 98), // Set the button color to red
+                    backgroundColor: Color.fromARGB(255, 255, 213, 98), // Set the button color to red
                   ),
                   child: const Text(
                     'Match akzeptieren',
@@ -96,7 +96,7 @@ class OfferPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 204, 38, 27), // Set the button color to red
+                    backgroundColor: Color.fromARGB(255, 204, 38, 27), // Set the button color to red
                   ),
                   child: Text(
                     'Match ablehnen',

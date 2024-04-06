@@ -40,7 +40,7 @@ def get_user(user: models.UserCreate, db: Session = Depends(get_db))->str:
         id = user.username
         print('created user')
     else:
-        if db_user.pw != pw:
+        if db_user.pw != user.pw:
             print('User exists but pw is wrong')
             raise HTTPException(status_code=404, detail="User exists but password is wrong")
         else:
@@ -88,14 +88,15 @@ def create_preference(
 ):
     return db_interface.write_score(db=db, score=models.Score(user_a_id=user_id_a, user_b_id=user_id_b, preference_score=score))
 
-@app.post("/user/{user_id_a}/set_preferences")
+@app.post("/user/{user_id}/set_preferences")
 def set_preferences(
     user_id: str, preferences_config: models.PreferencesConfig,  db: Session = Depends(get_db)
 ):
+    print('user_id', user_id)
     user = db_interface.get_user(db=db, user_id=user_id)
-    user.pref_min_size = preferences_config.min_size
-    user.pref_max_prize = preferences_config.max_price
-    user.pref_min_rooms = preferences_config.min_rooms
+    user.pref_min_size = float(preferences_config.min_size)
+    user.pref_max_prize = float(preferences_config.max_price)
+    user.pref_min_rooms = int(preferences_config.min_rooms)
     db_interface.write_user(db=db, user=user)
 
 # @app.get("/users/{user_id}/fetch_options", response_model=models.User)
