@@ -7,7 +7,6 @@ import 'pages/profile_page.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../api/login.dart';
 
 void main() => runApp(const MyApp());
@@ -34,27 +33,15 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
               seedColor: const Color(0xFFEFB20A), brightness: Brightness.light),
-          textTheme: TextTheme(
-            displayLarge: const TextStyle(
-              fontSize: 72,
-              fontWeight: FontWeight.bold,
-            ),
-            titleLarge: GoogleFonts.raleway(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            ),
-            bodyMedium: GoogleFonts.raleway(
-              fontSize: 20,
-            ),
-            displaySmall: GoogleFonts.rubik(
-              fontSize: 20,
-            ),
-          ),
         ),
         home: Scaffold(
           appBar: AppBar(
             title: const Text(_title),
             backgroundColor: const Color(0xFFEFB20A),
+            titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
           ),
           body: const MyStatefulWidget(),
         ),
@@ -119,7 +106,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Please sign in',
+                  'Bitte loggen Sie sich ein:',
                   style: TextStyle(fontSize: 20),
                 )),
             Container(
@@ -147,7 +134,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               height: 20,
             ),
             ElevatedButton(
-              child: const Text('Sign In'),
+              child: const Text('Anmelden', style: TextStyle(fontSize: 20)),
               onPressed: () {
                 setState((){
                     apiCall=true; // Set state like this

@@ -33,7 +33,6 @@ dependencies:
   confetti: ^0.7.0
   http: ^0.13.3
   flutter_bloc: ^8.1.5
-  google_fonts: ^2.2.0
 
 
   # The following adds the Cupertino Icons font to your application.

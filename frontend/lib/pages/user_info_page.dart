@@ -26,13 +26,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        // backgroundColor: Colors.transparent,
         leading: Padding(
           padding: const EdgeInsets.only(left: 24),
           child: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
-              color: ColorConstants.primaryColor,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -42,11 +42,11 @@ class _UserInfoPageState extends State<UserInfoPage> {
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 8, top: 8, right: 8,),
             child: IconButton(
               icon: Icon(
                 Icons.more_vert,
-                color: ColorConstants.primaryColor,
+                color: Colors.white,
               ),
               onPressed: () {},
             ),
@@ -101,25 +101,25 @@ class _UserInfoPageState extends State<UserInfoPage> {
                     ),
                     Text('Zimmer: 2',
                         style: TextStyle(
-                            color: ColorConstants.secondary, fontSize: 16)),
+                            color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
                     Text('Kaltmiete: 413€',
                         style: TextStyle(
-                            color: ColorConstants.secondary, fontSize: 16)),
+                            color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
                     Text('Nebenkosten: 175€',
                         style: TextStyle(
-                            color: ColorConstants.secondary, fontSize: 16)),
+                            color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
                     Text('Stockwerk: 1',
                         style: TextStyle(
-                            color: ColorConstants.secondary, fontSize: 16)),
+                            color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
@@ -177,7 +177,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
