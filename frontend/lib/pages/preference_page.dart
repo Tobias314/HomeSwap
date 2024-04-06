@@ -1,6 +1,6 @@
 import 'package:dating_app/cubits/currentHomeCubit.dart';
 import 'package:dating_app/pages/profile_page.dart';
-import 'package:dating_app/pages/swipe_page.dart';
+import 'package:dating_app/pages/swipe_page_0.dart';
 import 'package:dating_app/pages/test.dart';
 import 'package:flutter/material.dart';
 import '../models/ApartmentPreferenceState.dart';
