@@ -3,6 +3,8 @@ import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
+import 'offer_page.dart'; 
+
 
 class SwipePage extends StatefulWidget {
   const SwipePage({Key? key}) : super(key: key);
@@ -12,7 +14,6 @@ class SwipePage extends StatefulWidget {
 }
 
 class _SwipePageState extends State<SwipePage> {
-
   List<ProfileCard> profile = [];
 
   List<String> images = [
@@ -27,7 +28,7 @@ class _SwipePageState extends State<SwipePage> {
       rating = value;
     });
   }
-
+  
   @override
   void initState() {
     super.initState();
@@ -41,19 +42,29 @@ class _SwipePageState extends State<SwipePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title:  Text('For You', style: TextStyle(color: ColorConstants.primaryColor, fontSize: 28, fontWeight: FontWeight.bold)),
+        title: Text('For You',
+            style: TextStyle(
+                color: ColorConstants.primaryColor,
+                fontSize: 28,
+                fontWeight: FontWeight.bold)),
         leading: IconButton(
-          icon: Icon(Icons.person, color: ColorConstants.primaryColor,),
+          icon: Icon(
+            Icons.person,
+            color: ColorConstants.primaryColor,
+          ),
           onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
-                    );
-                  },
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfilePage()),
+            );
+          },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.message, color: ColorConstants.primaryColor,),
+            icon: Icon(
+              Icons.message,
+              color: ColorConstants.primaryColor,
+            ),
             onPressed: () {},
           ),
         ],
@@ -65,98 +76,59 @@ class _SwipePageState extends State<SwipePage> {
             cards: profile,
           ),
           Positioned(
-            bottom: 50,
+            bottom: 0,
             right: 0,
             left: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  onTap: () { },
-                  child: Container(
-                    width: 64,
-                    height: 64,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Icon(Icons.close, color: ColorConstants.close, size: 32,),
-                  ),
-                ),
-                InkWell(
-                  onTap: () { },
-                  child: Container(
-                    width: 56,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Icon(Icons.star, color: ColorConstants.star, size: 32,),
-                  ),
-                ),
-                InkWell(
-                  onTap: () { },
-                  child: Container(
-                    width: 64,
-                    height: 64,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Icon(Icons.favorite, color: ColorConstants.favorite, size: 32,),
-                  ),
-                ),
-              ],
-            )
-          ),
-          const Text(
-              'Rate this profile:',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                5,
-                (index) => IconButton(
-                  onPressed: () {
-                    setRating(index + 1);
-                  },
-                  icon: Icon(
-                    index < rating ? Icons.star : Icons.star_border,
-                    color: index < rating ? Colors.yellow : Colors.grey,
-                    size: 40,
-                  ),
+            child: Container(
+              padding: const EdgeInsets.only(bottom: 50),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [
+                    Colors.white,
+                    Colors.white,
+                    Colors.white.withOpacity(0.6),
+                    Colors.white.withOpacity(0),
+                  ],
                 ),
               ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      5,
+                      (index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15.0), // Adjust spacing between stars
+                        child: IconButton(
+                          onPressed: () {
+                            setRating(index + 1);
+                            // Navigate to OfferPage after setting the rating
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => OfferPage()),
+                            );
+                          },
+                          icon: Icon(
+                            index < rating ? Icons.star : Icons.star_border,
+                            color: index < rating
+                                ? Color.fromARGB(255, 230, 173, 17)
+                                : Colors.grey,
+                            size: 50, // Adjust size of the stars
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
-            SizedBox(height: 20),
-            Text(
-              'You rated this profile with $rating stars.',
-              style: TextStyle(fontSize: 16),
-            ),
+          ),
         ],
       ),
     );

@@ -1,16 +1,26 @@
-import 'package:dating_app/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:dating_app/constants/colors.dart';
+import 'offer_page.dart'; 
 
-class UserInfoPage extends StatelessWidget {
-  UserInfoPage({ Key? key, required this.image,x}) : super(key: key);
+class UserInfoPage extends StatefulWidget {
+  UserInfoPage({Key? key, required this.image}) : super(key: key);
   final String image;
 
+  @override
+  _UserInfoPageState createState() => _UserInfoPageState();
+}
+
+class _UserInfoPageState extends State<UserInfoPage> {
   List<String> images = [
     'assets/images/example1.jpg',
-    'assets/images/example2.jpg',
-    'assets/images/example3.jpg',
   ];
 
+  int rating = 0;
+  void setRating(int value) {
+    setState(() {
+      rating = value;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +30,10 @@ class UserInfoPage extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 24),
           child: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: ColorConstants.primaryColor,),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: ColorConstants.primaryColor,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -31,7 +44,10 @@ class UserInfoPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 8),
             child: IconButton(
-              icon: Icon(Icons.more_vert, color: ColorConstants.primaryColor,),
+              icon: Icon(
+                Icons.more_vert,
+                color: ColorConstants.primaryColor,
+              ),
               onPressed: () {},
             ),
           ),
@@ -39,32 +55,36 @@ class UserInfoPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 2,
-                  margin: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(50)),
-                    image: DecorationImage(
-                      image: AssetImage(image),
-                      fit: BoxFit.fitWidth,
-                      alignment: Alignment.topCenter,
-                      scale: 1.1,
-                    ),
+          CustomScrollView(slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                height: MediaQuery.of(context).size.height / 2,
+                margin: const EdgeInsets.only(left: 20),
+                decoration: BoxDecoration(
+                  borderRadius:
+                      const BorderRadius.only(bottomLeft: Radius.circular(50)),
+                  image: DecorationImage(
+                    image: AssetImage(widget.image),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topCenter,
+                    scale: 1.1,
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Padding(
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        Text('Wohnung in Berlin Neukölln, 55 m²', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: ColorConstants.secondary)),
+                        Text('Wohnung in Berlin Neukölln, 55 m²',
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
+                                color: ColorConstants.secondary)),
                         const SizedBox(width: 10),
                         Container(
                           width: 10,
@@ -76,21 +96,38 @@ class UserInfoPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(height: 26,),
-                    Text('Zimmer: 2', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 8,),
-                    Text('Kaltmiete: 413€', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 8,),
-                    Text('Nebenkosten: 175€', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 8,),
-                    Text('Stockwerk: 1', style: TextStyle(color: ColorConstants.secondary, fontSize: 16)),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 26,
+                    ),
+                    Text('Zimmer: 2',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text('Kaltmiete: 413€',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text('Nebenkosten: 175€',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Text('Stockwerk: 1',
+                        style: TextStyle(
+                            color: ColorConstants.secondary, fontSize: 16)),
+                    const SizedBox(
+                      height: 8,
+                    ),
                   ],
                 ),
               ),
-              ),
-            ]
-          ),
+            ),
+          ]),
           Positioned(
             bottom: 0,
             right: 0,
@@ -112,80 +149,41 @@ class UserInfoPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  InkWell(
-                    onTap: () { },
-                    child: Container(
-                      width: 64,
-                      height: 64,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 4),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      5,
+                      (index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15.0), // Adjust spacing between stars
+                        child: IconButton(
+                          onPressed: () {
+                            setRating(index + 1);
+                            // Navigate to OfferPage after setting the rating
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => OfferPage()),
+                            );
+                          },
+                          icon: Icon(
+                            index < rating ? Icons.star : Icons.star_border,
+                            color: index < rating
+                                ? Color.fromARGB(255, 230, 173, 17)
+                                : Colors.grey,
+                            size: 50, // Adjust size of the stars
                           ),
-                        ],
+                        ),
                       ),
-                      child: Icon(Icons.close, color: ColorConstants.close, size: 32,),
                     ),
                   ),
-                  InkWell(
-                    onTap: () { },
-                    child: Container(
-                      width: 56,
-                      height: 56,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Icon(Icons.star, color: ColorConstants.star, size: 32,),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () { },
-                    child: Container(
-                      width: 64,
-                      height: 64,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Icon(Icons.favorite, color: ColorConstants.favorite, size: 32,),
-                    ),
-                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
-    );
-  }
-
-  Widget _chip({required Color background, required Color color, required String title}) {
-    return Chip(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      label: Text(title, style: TextStyle(color: color)),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(32),
-      ),
-      backgroundColor: background,
     );
   }
 }

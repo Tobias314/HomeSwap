@@ -94,9 +94,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
-          },
-        ),
+                );
+              },
+            ),
           ],
         ));
   }

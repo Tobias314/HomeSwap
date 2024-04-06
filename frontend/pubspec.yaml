@@ -30,7 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
   settings_ui: ^2.0.2
-  http: ^1.1.0
+  confetti: ^0.7.0
+  http: ^0.13.3
   flutter_bloc: ^8.1.5
 
 
