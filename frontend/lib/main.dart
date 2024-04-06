@@ -38,6 +38,10 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text(_title),
             backgroundColor: const Color(0xFFEFB20A),
+            titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
           ),
           body: const MyStatefulWidget(),
         ),
@@ -69,7 +73,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       context.read<CurrentHomeCubit>().updateId(userid);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => PreferencePage()),);
+        MaterialPageRoute(builder: (context) => ProfilePage()),);
     });
   }
  
@@ -91,9 +95,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   width: 400,
                   height: 400,
                 )),
-            const SizedBox(
-              height: 20,
-            ),
             Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.all(10),
@@ -127,7 +128,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
             ElevatedButton(
               child: const Text('Anmelden', style: TextStyle(fontSize: 20)),

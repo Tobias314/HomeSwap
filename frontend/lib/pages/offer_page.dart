@@ -31,6 +31,7 @@ class OfferPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text('Neues Match gefunden!'),
         backgroundColor: const Color(0xFFEFB20A),
         titleTextStyle: const TextStyle(  
@@ -83,7 +84,7 @@ class OfferPage extends StatelessWidget {
                   ),
                   child: const Text(
                     'Match akzeptieren',
-                    style: TextStyle(color: Colors.black), // Set text color to black
+                    style: TextStyle(color: Colors.white), // Set text color to black
                   ),
                 ),
               ),

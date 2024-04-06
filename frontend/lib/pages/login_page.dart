@@ -81,7 +81,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: const Text('Sign In'),
               onPressed: () {
                 print(nameController.text);
-                print('lol');
                 print(passwordController.text);
                 Future<String?>? _userid_future;
                 _userid_future = login(username: nameController.text, password: passwordController.text);

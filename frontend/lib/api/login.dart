@@ -21,8 +21,7 @@ Future<String> login({
 
   if (response.statusCode == 200) {
     // Parse the JSON response
-    String body = String.fromCharCodes(response.bodyBytes);
-    final userid = jsonDecode(body);
+    String userid = jsonDecode(String.fromCharCodes(response.bodyBytes));
     print('got back userid: $userid');
     return userid;
   } else {
