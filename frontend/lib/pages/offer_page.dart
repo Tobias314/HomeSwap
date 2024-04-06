@@ -32,6 +32,7 @@ class OfferPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Wir haben ein paar ein Match für dich!'),
+        backgroundColor: const Color(0xFFEFB20A),
       ),
       body: ListView.separated(
         itemCount: imageDataList.length,
@@ -52,12 +53,12 @@ class OfferPage extends StatelessWidget {
                   children: [
                     Text(
                       imageData.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(imageData.description),
                   ],
                 ),
@@ -73,10 +74,16 @@ class OfferPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ConfettiPage()),
                     );
                   },
-                  child: Text('Match akzeptieren'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 255, 213, 98), // Set the button color to red
+                  ),
+                  child: const Text(
+                    'Match akzeptieren',
+                    style: TextStyle(color: Colors.black), // Set text color to black
+                  ),
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: ElevatedButton(
@@ -88,10 +95,13 @@ class OfferPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SwipePage()),
                     );
                   },
-                  // style: ElevatedButton.styleFrom(
-                  //   primary: Colors.red, // Set the button color to red
-                  // ),
-                  child: Text('Match ablehnen'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 204, 38, 27), // Set the button color to red
+                  ),
+                  child: Text(
+                    'Match ablehnen',
+                    style: TextStyle(color: Colors.white), // Set text color to black
+                  ),
                 ),
               ),
             ],

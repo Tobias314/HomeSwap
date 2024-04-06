@@ -3,9 +3,6 @@ import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import '../api/fetch_options.dart';
-import '../api/send_preference.dart';
 import 'offer_page.dart'; 
 
 
@@ -18,24 +15,22 @@ class SwipePage extends StatefulWidget {
 
 class _SwipePageState extends State<SwipePage> {
   List<ProfileCard> profile = [];
-  var optionID;
 
-  // List<String> images = [
-  //   'assets/images/example1.jpg',
-  //   'assets/images/example2.jpg',
-  //   'assets/images/example3.jpg',
-  // ];
+  List<String> images = [
+    'assets/images/example3.jpg',
+  ];
 
   int rating = 0;
-  void setRating(String myID, String theirID, int score) {
-    // Update the Cubit state
-    sendPreferences(myID: myID, theirID: theirID, score:score);
+  void setRating(int value) {
+    setState(() {
+      rating = value;
+    });
   }
   
   @override
   void initState() {
     super.initState();
-    optionID = _loadCards();
+    _loadCards();
   }
 
   @override
@@ -43,13 +38,8 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text('For You',
-            style: TextStyle(
-                color: ColorConstants.primaryColor,
-                fontSize: 28,
-                fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFFEFB20A),
+        title: Text('For You',),
         leading: IconButton(
           icon: Icon(
             Icons.person,
@@ -109,19 +99,18 @@ class _SwipePageState extends State<SwipePage> {
                             horizontal: 15.0), // Adjust spacing between stars
                         child: IconButton(
                           onPressed: () {
-                            String myID = getMyID();
-                            setRating(myID, optionID, index + 1);
+                            setRating(index + 1);
                             // Navigate to OfferPage after setting the rating
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => OfferPage()),
+                              MaterialPageRoute(builder: (context) => const OfferPage()),
                             );
                           },
                           icon: Icon(
                             index < rating ? Icons.star : Icons.star_border,
                             color: index < rating
-                                ? Color.fromARGB(255, 230, 173, 17)
-                                : Colors.grey,
+                                ? const Color(0xFFEFB20A)
+                                : const Color.fromARGB(255, 211, 211, 211),
                             size: 50, // Adjust size of the stars
                           ),
                         ),
@@ -138,20 +127,9 @@ class _SwipePageState extends State<SwipePage> {
     );
   }
 
-  Future<String> _loadCards() async{
-    // TODO: make work
-    String myID = getMyID();
-    final data = await fetchMatchingOptions(ID: myID); 
-    List<String> images = data['images'];
+  void _loadCards() {
     for (String image in images) {
       profile.add(ProfileCard(image: image));
     }
-    return data['ID'];
   }
-
-  String getMyID(){
-    // TODO implement as Cubit
-    return "a";
-  }
-
 }

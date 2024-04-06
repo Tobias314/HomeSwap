@@ -175,6 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('What do you have to offer'),
+        backgroundColor: const Color(0xFFEFB20A),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -231,7 +232,7 @@ class _ProfilePageState extends State<ProfilePage> {
               // Photo upload
               const SizedBox(height: 20),
               const Text(
-                'Please send us a photo of your appartment via E-Mail to humble@hack.hpi.com, we will add this to your profile.',
+                'Please send us a photo of your appartment via E-Mail to homeswap@hack.hpi.com, we will add this to your profile.',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

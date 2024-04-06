@@ -7,6 +7,7 @@ import 'pages/profile_page.dart';
 import '../models/ApartmentPreferenceState.dart';
 import '../cubits/currentHomeCubit.dart';
 import '../cubits/newHomePreferencesCubit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../api/login.dart';
 
 void main() => runApp(const MyApp());
@@ -14,7 +15,7 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Home Ring Swapping App';
+  static const String _title = 'Home Swap';
 
   @override
   Widget build(BuildContext context) {
@@ -29,22 +30,46 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: _title,
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color(0xFFEFB20A), brightness: Brightness.light),
+          textTheme: TextTheme(
+            displayLarge: const TextStyle(
+              fontSize: 72,
+              fontWeight: FontWeight.bold,
+            ),
+            titleLarge: GoogleFonts.raleway(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+            bodyMedium: GoogleFonts.raleway(
+              fontSize: 20,
+            ),
+            displaySmall: GoogleFonts.rubik(
+              fontSize: 20,
+            ),
+          ),
+        ),
         home: Scaffold(
-          appBar: AppBar(title: const Text(_title)),
-          body: MyStatefulWidget(),
+          appBar: AppBar(
+            title: const Text(_title),
+            backgroundColor: const Color(0xFFEFB20A),
+          ),
+          body: const MyStatefulWidget(),
         ),
       ),
     );
   }
 }
-  
+
 class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key? key}) : super(key: key);
- 
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
- 
+
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -72,9 +97,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: ListView(
           children: <Widget>[
             Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(10),
+            ),
+            Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
-                ),
+                child: const Image(
+                  image: AssetImage('assets/images/logo1.png'),
+                  width: 400,
+                  height: 400,
+                )),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(10),
+            ),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -102,6 +142,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   labelText: 'Password',
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             ElevatedButton(
               child: const Text('Sign In'),

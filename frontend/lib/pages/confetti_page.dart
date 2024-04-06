@@ -96,11 +96,14 @@ class _ConfettiPageState extends State<ConfettiPage> {
               shouldLoop:
                   true, // start again as soon as the animation is finished
               colors: const [
-                Colors.green,
-                Colors.blue,
-                Colors.pink,
-                Colors.orange,
-                Colors.purple
+                const Color(0xFFEFB20A), 
+                Color.fromARGB(255, 246, 240, 222), 
+                Color.fromARGB(255, 239, 128, 10), 
+                Color.fromARGB(255, 239, 102, 10), 
+                Color.fromARGB(255, 242, 146, 127), 
+                Color.fromARGB(255, 253, 211, 74), 
+                Color.fromARGB(255, 193, 72, 2), 
+                Color.fromARGB(255, 253, 211, 74), 
               ], // manually specify the colors to be used
               createParticlePath: drawStar, // define a custom shape/path.
             ),
@@ -109,9 +112,9 @@ class _ConfettiPageState extends State<ConfettiPage> {
             alignment: Alignment.center,
             child: TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Glückwunsch!',
-                style: TextStyle(color: Colors.black, fontSize: 20),
+                style: TextStyle(color: Colors.black, fontSize: 30),
               ),
             ),
             ),
