@@ -3,8 +3,14 @@ import 'package:dating_app/pages/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard({Key? key, required this.image}) : super(key: key);
+  const ProfileCard({
+    Key? key, 
+    required this.image, 
+    required this.displayText, // Add a new parameter for the text
+  }) : super(key: key);
+
   final String image;
+  final String displayText; // New field to store the passed text
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +23,10 @@ class ProfileCard extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder:  (context) => UserInfoPage(image: image))
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => UserInfoPage(image: image))
+              // );
             },
             child: Container(
               decoration: BoxDecoration(
@@ -29,8 +35,8 @@ class ProfileCard extends StatelessWidget {
                   image: AssetImage(image.toString()),
                   fit: BoxFit.cover,
                 ),
-                )
               ),
+            ),
           ),
           Positioned(
             bottom: 30,
@@ -41,12 +47,23 @@ class ProfileCard extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.8),
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16), 
+                  bottomLeft: Radius.circular(16)
+                ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Wohnung in Berlin Neukölln, 55 m²', style: TextStyle(color: ColorConstants.secondary, fontSize: 25, fontWeight: FontWeight.w500)),
+                  // Use the `displayText` to show the text dynamically
+                  Text(
+                    displayText, 
+                    style: TextStyle(
+                      color: ColorConstants.secondary, 
+                      fontSize: 25, 
+                      fontWeight: FontWeight.w500
+                    )
+                  ),
                 ],
               ),
             ),

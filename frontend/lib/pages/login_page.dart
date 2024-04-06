@@ -76,7 +76,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             const SizedBox(height: 32),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFFEFB20A),
+                backgroundColor: const Color(0xFFEFB20A),
               ),
               child: const Text('Sign In'),
               onPressed: () {

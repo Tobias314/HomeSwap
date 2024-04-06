@@ -1,3 +1,4 @@
+
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/cubits/currentHomeCubit.dart';
@@ -22,11 +23,11 @@ class _SwipePageState extends State<SwipePage> {
   List<ProfileCard> profile = [];
   var optionID;
 
-  // List<String> images = [
-  //   'assets/images/example1.jpg',
-  //   'assets/images/example2.jpg',
-  //   'assets/images/example3.jpg',
-  // ];
+  List<String> images = [
+    'assets/images/example1.jpg',
+    'assets/images/example2.jpg',
+    'assets/images/example3.jpg',
+  ];
 
   int rating = 0;
   void setRating(String myID, String theirID, int score) {
@@ -37,20 +38,22 @@ class _SwipePageState extends State<SwipePage> {
   @override
   void initState() {
     super.initState();
-    optionID = _loadCards();
   }
 
   @override
   Widget build(BuildContext context) {
+    // Ensure this future is initialized outside build or in initState to avoid re-creating it on every build
+    final Future<String> optionIDfuture = _loadCards();
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFFEFB20A),
-        titleTextStyle: const TextStyle(  
-              color: Colors.white,
-              fontSize: 30,
-              ),
-        title: const Text('For You',),
+        titleTextStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+        ),
+        title: const Text('For You'),
         leading: IconButton(
           icon: Icon(
             Icons.person,
@@ -73,81 +76,100 @@ class _SwipePageState extends State<SwipePage> {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          AppinioSwiper(
-            padding: const EdgeInsets.only(bottom: 130, top: 16),
-            cards: profile,
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            left: 0,
-            child: Container(
-              padding: const EdgeInsets.only(bottom: 50),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Colors.white,
-                    Colors.white,
-                    Colors.white.withOpacity(0.6),
-                    Colors.white.withOpacity(0),
-                  ],
-                ),
+      body: FutureBuilder<String>(
+        future: optionIDfuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+
+          return Stack(
+            children: [
+              AppinioSwiper(
+                padding: const EdgeInsets.only(bottom: 130, top: 16),
+                cards: profile,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      5,
-                      (index) => Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15.0), // Adjust spacing between stars
-                        child: IconButton(
-                          onPressed: () {
-                            String myID = getMyID();
-                            setRating(myID, optionID, index + 1);
-                            // Navigate to OfferPage after setting the rating
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => OfferPage()),
-                            );
-                          },
-                          icon: Icon(
-                            index < rating ? Icons.star : Icons.star_border,
-                            color: index < rating
-                                ? Color.fromARGB(255, 230, 173, 17)
-                                : Colors.grey,
-                            size: 50, // Adjust size of the stars
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 0,
+                child: Container(
+                  padding: const EdgeInsets.only(bottom: 50),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.white,
+                        Colors.white,
+                        Colors.white.withOpacity(0.6),
+                        Colors.white.withOpacity(0),
+                      ],
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          5,
+                          (index) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                            child: IconButton(
+                              onPressed: () {
+                                String myID = getMyID();
+                                // Assuming optionID is now obtained differently, perhaps from profile
+                                // Adjust this part to your logic of obtaining optionID after loading
+                                String optionID = "someOptionID";
+                                setRating(myID, optionID, index + 1);
+                                // Navigate to OfferPage after setting the rating
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => OfferPage()),
+                                );
+                              },
+                              icon: Icon(
+                                index < rating ? Icons.star : Icons.star_border,
+                                color: index < rating
+                                    ? Color.fromARGB(255, 230, 173, 17)
+                                    : Colors.grey,
+                                size: 50,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      const SizedBox(height: 20),
+                    ],
                   ),
-                  const SizedBox(height: 20),
-                ],
+                ),
               ),
-            ),
-          ),
-        ],
+            ],
+          );
+        },
       ),
     );
   }
 
+
   Future<String> _loadCards() async{
     // TODO: make work
     String myID = getMyID();
-    final data = await fetchMatchingOptions(ID: myID); 
-    List<String> images = data['images'];
-    for (String image in images) {
-      profile.add(ProfileCard(image: image));
-    }
-    return data['ID'];
+    final data = await fetchMatchingOptions(ID: myID);
+    // TODO: Make several images possible 
+    String image = data['img_url'];
+    String zimmern = data['offer_rooms']?.toString() ?? '2';
+    String preis =  data['offer_prize']?.toString() ?? '400';
+    String groesse =  data['offer_size']?.toString() ?? '15';
+    profile.add(ProfileCard(image: images[0], displayText: "Wohnung mit $zimmern zimmern für $preis € $groesse Quadratmeter"));
+    // for (String image in images) {
+    //   profile.add(ProfileCard(image: image));
+    // }
+    return data['username'];
   }
 
   String getMyID(){
