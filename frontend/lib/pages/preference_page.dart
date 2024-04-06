@@ -163,8 +163,12 @@ class PreferencePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('What are you looking for?'),
+          title: const Text('Wonach suchst du?'),
           backgroundColor: const Color(0xFFEFB20A),
+          titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -172,11 +176,11 @@ class PreferencePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Preferences',
-                style: TextStyle(
+                'Präferenzen',
+                /*style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                ),
+                ),*/
               ),
               const SizedBox(height: 20),
               buildDropdownRow(
@@ -215,9 +219,10 @@ class PreferencePage extends StatelessWidget {
                   context.read<NewHomePreferencesCubit>().updateCity(value);
                 },
               ),
+              const SizedBox(height: 20,),
               // Add more BlocBuilders for other preferences
               ElevatedButton(
-                child: const Text('Submit Preferences'),
+                child: const Text('weiter'),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -244,7 +249,7 @@ class PreferencePage extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20),
           ),
           DropdownButtonFormField<String>(
             value: value,

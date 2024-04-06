@@ -31,8 +31,12 @@ class OfferPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wir haben ein paar ein Match für dich!'),
+        title: Text('Neues Match gefunden!'),
         backgroundColor: const Color(0xFFEFB20A),
+        titleTextStyle: const TextStyle(  
+              color: Colors.white,
+              fontSize: 30,
+              )
       ),
       body: ListView.separated(
         itemCount: imageDataList.length,
