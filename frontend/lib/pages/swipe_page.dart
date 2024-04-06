@@ -38,6 +38,7 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xFFEFB20A),
         titleTextStyle: const TextStyle(  
               color: Colors.white,
