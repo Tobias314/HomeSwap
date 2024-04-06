@@ -17,8 +17,6 @@ class _SwipePageState extends State<SwipePage> {
   List<ProfileCard> profile = [];
 
   List<String> images = [
-    'assets/images/example1.jpg',
-    'assets/images/example2.jpg',
     'assets/images/example3.jpg',
   ];
 
@@ -40,13 +38,8 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text('For You',
-            style: TextStyle(
-                color: ColorConstants.primaryColor,
-                fontSize: 28,
-                fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFFEFB20A),
+        title: Text('For You',),
         leading: IconButton(
           icon: Icon(
             Icons.person,
@@ -110,14 +103,14 @@ class _SwipePageState extends State<SwipePage> {
                             // Navigate to OfferPage after setting the rating
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => OfferPage()),
+                              MaterialPageRoute(builder: (context) => const OfferPage()),
                             );
                           },
                           icon: Icon(
                             index < rating ? Icons.star : Icons.star_border,
                             color: index < rating
-                                ? Color.fromARGB(255, 230, 173, 17)
-                                : Colors.grey,
+                                ? const Color(0xFFEFB20A)
+                                : const Color.fromARGB(255, 211, 211, 211),
                             size: 50, // Adjust size of the stars
                           ),
                         ),

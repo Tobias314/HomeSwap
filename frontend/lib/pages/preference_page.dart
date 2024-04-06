@@ -13,118 +13,53 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PreferencePage extends StatelessWidget {
   String selectedMinZimmer = '1';
-  String selectedMaxZimmer = '10+';
-  String selectedMinQuadratmeter = '<10';
-  String selectedMaxQuadratmeter = '>200';
-  String selectedMietpreisMin = '<100';
-  String selectedMietpreisMax = '>2000';
+  String selectedMinQuadratmeter = '10';
+  String selectedMietpreisMax = '2000';
   String selectedStadt = 'Berlin';
 
   List<String> Zimmeranzahl_Min = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10+'
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'
   ];
-  List<String> Zimmeranzahl_Max = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10+'
-  ];
+
   List<String> Quadratmeter_Min = [
-    '<10',
-    '10-20',
-    '20-30',
-    '30-40',
-    '40-50',
-    '50-60',
-    '60-70',
-    '70-80',
-    '80-90',
-    '90-100',
-    '100-110',
-    '110-120',
-    '120-130',
-    '130-140',
-    '140-150',
-    '150-160',
-    '160-170',
-    '170-180',
-    '180-190',
-    '190-200',
-    '>200'
+    '10',
+    '20',
+    '30',
+    '40',
+    '50',
+    '60',
+    '70',
+    '80',
+    '90',
+    '100',
+    '110',
+    '120',
+    '130',
+    '140',
+    '150',
+    '160',
+    '170',
+    '180',
+    '190',
+    '200'
   ];
-  List<String> Quadratmeter_Max = [
-    '<10',
-    '10-20',
-    '20-30',
-    '30-40',
-    '40-50',
-    '50-60',
-    '60-70',
-    '70-80',
-    '80-90',
-    '90-100',
-    '100-110',
-    '110-120',
-    '120-130',
-    '130-140',
-    '140-150',
-    '150-160',
-    '160-170',
-    '170-180',
-    '180-190',
-    '190-200',
-    '>200'
-  ];
-  List<String> Mietpreis_Min = [
-    '<100',
-    '100-200',
-    '200-300',
-    '300-400',
-    '400-500',
-    '500-600',
-    '600-700',
-    '700-800',
-    '800-900',
-    '900-1000',
-    '1000-1200',
-    '1200-1400',
-    '1400-1600',
-    '1600-1800',
-    '1800-2000',
-    '>2000'
-  ];
+
   List<String> Mietpreis_Max = [
-    '<100',
-    '100-200',
-    '200-300',
-    '300-400',
-    '400-500',
-    '500-600',
-    '600-700',
-    '700-800',
-    '800-900',
-    '900-1000',
-    '1000-1200',
-    '1200-1400',
-    '1400-1600',
-    '1600-1800',
-    '1800-2000',
-    '>2000'
+    '100',
+    '200',
+    '300',
+    '400',
+    '500',
+    '600',
+    '700',
+    '800',
+    '900',
+    '1000',
+    '1200',
+    '1400',
+    '1600',
+    '1800',
+    '2000'
   ];
   List<String> Stadt = [
     'Aachen',
@@ -229,6 +164,7 @@ class PreferencePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('What are you looking for?'),
+          backgroundColor: const Color(0xFFEFB20A),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -254,39 +190,12 @@ class PreferencePage extends StatelessWidget {
                 },
               ),
               buildDropdownRow(
-                label: 'Zimmerzahl Maximum',
-                value: selectedMaxZimmer, // Your state variable holding the current value
-                items: Zimmeranzahl_Max, // Your list of options for the dropdown
-                onChanged: (String? value) {
-                   // Update the Cubit state
-                  context.read<NewHomePreferencesCubit>().updateMaxRooms(value);
-                },
-              ),
-              buildDropdownRow(
-                label: 'Minimun Quadratmeter',
+                label: 'Minimum Quadratmeter',
                 value: selectedMinQuadratmeter, // Your state variable holding the current value
                 items: Quadratmeter_Min, // Your list of options for the dropdown
                 onChanged: (String? value) {
                    // Update the Cubit state
                   context.read<NewHomePreferencesCubit>().updateMinSquareMeters(value);
-                },
-              ),
-              buildDropdownRow(
-                label: 'Maximun Quadratmeter',
-                value: selectedMaxQuadratmeter, // Your state variable holding the current value
-                items: Quadratmeter_Max, // Your list of options for the dropdown
-                onChanged: (String? value) {
-                   // Update the Cubit state
-                  context.read<NewHomePreferencesCubit>().updateMaxSquareMeters(value);
-                },
-              ),
-              buildDropdownRow(
-                label: 'Minimum Miete',
-                value: selectedMietpreisMin, // Your state variable holding the current value
-                items: Mietpreis_Min, // Your list of options for the dropdown
-                onChanged: (String? value) {
-                   // Update the Cubit state
-                  context.read<NewHomePreferencesCubit>().updateMinRent(value);
                 },
               ),
               buildDropdownRow(

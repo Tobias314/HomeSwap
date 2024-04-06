@@ -172,20 +172,21 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('What do you have to offer'),
+        backgroundColor: const Color(0xFFEFB20A),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Please fill in information about your appartment:',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Table(
               children: [
                 buildDropdownRow(
@@ -233,9 +234,9 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
 
             // Photo upload
-            SizedBox(height: 20),
-            Text(
-              'Please send us a photo of your appartment via E-Mail to humble@hack.hpi.com, we will add this to your profile.',
+            const SizedBox(height: 20),
+            const Text(
+              'Please send us a photo of your appartment via E-Mail to homeswap@hack.hpi.com, we will add this to your profile.',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -243,6 +244,9 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
 
             ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFFEFB20A),
+                  ),
                   child: const Text('Submit'),
                   onPressed: () {
                     Navigator.push(
@@ -270,7 +274,7 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               label,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ),

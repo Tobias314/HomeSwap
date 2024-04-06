@@ -74,10 +74,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color(0xFFEFB20A),
+              ),
               child: const Text('Sign In'),
               onPressed: () {
-                print(nameController.text);
-                print(passwordController.text);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PreferencePage()),
