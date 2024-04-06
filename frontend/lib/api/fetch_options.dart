@@ -17,7 +17,13 @@ Future<dynamic> fetchMatchingOptions({
     String body = String.fromCharCodes(response.bodyBytes);
     final data = jsonDecode(body);
     print('Matching options: ${data[0]}');
-    return data[0];
+    if (data.isEmpty()) {
+      print('No matches found:(');
+      return "";
+    }else{
+      return data[0];
+    }
+    
   } else {
     // Handle errors
     print('Failed to fetch matching options. Status Code: ${response.statusCode}');
