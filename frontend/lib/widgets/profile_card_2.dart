@@ -47,7 +47,7 @@ class ProfileCard2 extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Wohnung in Berlin Neukölln, 55 m²', style: TextStyle(color: ColorConstants.secondary, fontSize: 25, fontWeight: FontWeight.w500)),
+                  Text('Wohnung in Berlin Spandau, 42 m²', style: TextStyle(color: ColorConstants.secondary, fontSize: 25, fontWeight: FontWeight.w500)),
                 ],
               ),
             ),

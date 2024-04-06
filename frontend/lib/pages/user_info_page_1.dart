@@ -13,7 +13,7 @@ class UserInfoPage1 extends StatefulWidget {
 
 class _UserInfoPage1State extends State<UserInfoPage1> {
   List<String> images = [
-    'assets/images/tauschwohnung01.jpg',
+    'assets/images/tauschwohnung02.jpg',
   ];
 
   int rating = 0;
@@ -82,7 +82,7 @@ class _UserInfoPage1State extends State<UserInfoPage1> {
                   children: [
                     Row(
                       children: [
-                        Text('Wohnung in Berlin Neukölln, 55 m²',
+                        Text('Wohnung in Berlin Mitte, 37 m²',
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w500,
@@ -107,19 +107,19 @@ class _UserInfoPage1State extends State<UserInfoPage1> {
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Kaltmiete: 450€',
+                    Text('Kaltmiete: 420€',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Nebenkosten: 170€',
+                    Text('Nebenkosten: 120€',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Stockwerk: 2',
+                    Text('Stockwerk: 5',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(

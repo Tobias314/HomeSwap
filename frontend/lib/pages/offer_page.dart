@@ -23,9 +23,9 @@ class OfferPage extends StatelessWidget {
     // Define a list of ImageData objects
     List<ImageData> imageDataList = [
       ImageData(
-        imagePath: "assets/images/example2.jpg",
-        name: "Wohnung in Berlin Moabit, 55 m²",
-        description: "3 Zimmer, 800€ Kaltmiete",
+        imagePath: "assets/images/tauschwohnung15.jpg",
+        name: "Wohnung in Berlin Charlottenburg, 75 m²",
+        description: "4 Zimmer, 647€ Kaltmiete",
       ),
     ];
 

@@ -12,7 +12,7 @@ class UserInfoPage4 extends StatefulWidget {
 
 class _UserInfoPage4State extends State<UserInfoPage4> {
   List<String> images = [
-    'assets/images/tauschwohnung01.jpg',
+    'assets/images/tauschwohnung15.jpg',
   ];
 
   int rating = 0;
@@ -81,7 +81,7 @@ class _UserInfoPage4State extends State<UserInfoPage4> {
                   children: [
                     Row(
                       children: [
-                        Text('Wohnung in Berlin Neukölln, 55 m²',
+                        Text('Wohnung in Berlin Charlottenburg, 75 m²',
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w500,
@@ -100,25 +100,25 @@ class _UserInfoPage4State extends State<UserInfoPage4> {
                     const SizedBox(
                       height: 26,
                     ),
-                    Text('Zimmer: 2',
+                    Text('Zimmer: 4',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Kaltmiete: 450€',
+                    Text('Kaltmiete: 647€',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Nebenkosten: 170€',
+                    Text('Nebenkosten: 114€',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(
                       height: 8,
                     ),
-                    Text('Stockwerk: 2',
+                    Text('Stockwerk: 3',
                         style: TextStyle(
                             color: ColorConstants.secondary, fontSize: 20)),
                     const SizedBox(

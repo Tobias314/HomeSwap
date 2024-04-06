@@ -1,6 +1,7 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:dating_app/constants/colors.dart';
 import 'package:dating_app/pages/profile_page.dart';
+import 'package:dating_app/pages/swipe_page_3.dart';
 import 'package:dating_app/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
 import '../widgets/profile_card_2.dart';
@@ -109,7 +110,7 @@ class _SwipePage2State extends State<SwipePage2> {
                             // Navigate to OfferPage after setting the rating
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const OfferPage()),
+                              MaterialPageRoute(builder: (context) => const SwipePage3()),
                             );
                           },
                           icon: Icon(
